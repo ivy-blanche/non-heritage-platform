@@ -21,8 +21,15 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.33</version>
-
     </dependency>
+
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>5.0.0</version> <!-- Tomcat 10 对应的版本 -->
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>non-heritage-platform</finalName>
