@@ -8,106 +8,101 @@
     <link rel="stylesheet" href="css/style.css">
 
 
+
+
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #023b6d;">
-    <div class="container">
+<div id="navbar-placeholder"></div>
 
-        <!-- 平台名 -->
-        <p class="navbar-brand mb-0 h1 text-white">非遗数字化保护平台</p>
+<!-- 页面其它内容 -->
 
-        <!-- 中间折叠按钮（移动端用） -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="切换导航">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- 中间导航链接 -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-white" href="heritage.html" target="_blank">非遗项目</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#" target="_blank">传承人档案</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="reservation.html" target="_blank">预约培养</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#" target="_blank">非遗工坊</a></li>
-            </ul>
-        </div>
-
-
-        <a href="user_login.html" target="_blank">
-            <button class="btn btn-outline-light me-2">用户入口</button>
-        </a>
-
-        <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#registerModal">企业入口</button>
-    </div>
-</nav>
+<script>
+    fetch("navbar.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+</script>
 
 <section class="text-center py-5" >
-    <h1 class="fw-bold fs" style="color: #023b6d;">传承千年技艺，点亮数字之光</h1>
-    <p class="lead mt-3" style="color: #023b6d;">将代县106项非遗项目数字化呈现，守护文化的温度与记忆。</p>
+    <h1 class="fw-bold fs">
+        传承 <span class="highlight-block">千年技艺</span>，点亮数字之光
+    </h1>
+
+    <p class="lead mt-3" >将代县106项非遗项目数字化呈现，守护文化的温度与记忆。</p>
 </section>
 
 <section class="px-3 py-5"> <!-- 左右边距设为很小 -->
     <div class="row g-2"> <!-- 每张图之间的间隙为 2（约 0.5rem） -->
         <!-- 第一行 -->
+        <!-- 第一行 -->
         <div class="col-6 col-md-3">
-            <img src="img/pic1.jpg" class="img-unified" alt="图片1">
+            <img src="img/pic1.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片1"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic2.jpg" class="img-unified" alt="图片2">
+            <img src="img/pic2.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片2"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic3.jpeg" class="img-unified" alt="图片3">
+            <img src="img/pic3.jpeg" class="img-unified img-fluid rounded shadow-sm" alt="图片3"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic4.jpg" class="img-unified" alt="图片4">
+            <img src="img/pic4.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片4"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
 
         <!-- 第二行 -->
         <div class="col-6 col-md-3">
-            <img src="img/pic5.jpg" class="img-unified" alt="图片5">
+            <img src="img/pic5.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片5"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic6.jpg" class="img-unified" alt="图片6">
+            <img src="img/pic6.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片6"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic7.jpg" class="img-unified" alt="图片7">
+            <img src="img/pic7.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片7"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic8.jpg" class="img-unified" alt="图片8">
+            <img src="img/pic8.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片8"
+                 data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
     </div>
 </section>
 
+<div class="modal fade" id="imgModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body text-center p-0">
+                <img id="modalImage" src="" alt="放大图" style="width: 100%; height: auto; border-radius: 8px;">
+            </div>
+        </div>
+    </div>
+</div>
 
- 
-<!-- Bootstrap Icons CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-
-
-<!-- 回到顶部按钮 -->
-<button onclick="scrollToTop()" id="backToTop" title="回到顶部">
-    <i class="bi bi-arrow-up"></i>
-</button>
-
-<!-- 回到顶部功能脚本 -->
 <script>
-    // 显示/隐藏按钮
-    window.onscroll = function () {
-        const btn = document.getElementById("backToTop");
-        if (document.documentElement.scrollTop > 200) {
-            btn.style.display = "block";
-        } else {
-            btn.style.display = "none";
-        }
-    };
-
-    // 平滑滚动到顶部
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showImage(src) {
+        document.getElementById("modalImage").src = src;
     }
 </script>
+
+ 
+
+
+
+<div id="footer-placeholder"></div>
+<script>
+    fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+</script>
+
 
 
 
