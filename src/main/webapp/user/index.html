@@ -5,7 +5,7 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="../css/content.css">
 
 </head>
 <body>
@@ -34,37 +34,37 @@
         <!-- 第一行 -->
         <!-- 第一行 -->
         <div class="col-6 col-md-3">
-            <img src="img/pic1.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片1"
+            <img src="../img/pic1.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片1"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic2.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片2"
+            <img src="../img/pic2.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片2"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic3.jpeg" class="img-unified img-fluid rounded shadow-sm" alt="图片3"
+            <img src="../img/pic3.jpeg" class="img-unified img-fluid rounded shadow-sm" alt="图片3"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic4.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片4"
+            <img src="../img/pic4.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片4"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
 
         <!-- 第二行 -->
         <div class="col-6 col-md-3">
-            <img src="img/pic5.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片5"
+            <img src="../img/pic5.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片5"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic6.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片6"
+            <img src="../img/pic6.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片6"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic7.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片7"
+            <img src="../img/pic7.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片7"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
         <div class="col-6 col-md-3">
-            <img src="img/pic8.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片8"
+            <img src="../img/pic8.jpg" class="img-unified img-fluid rounded shadow-sm" alt="图片8"
                  data-bs-toggle="modal" data-bs-target="#imgModal" onclick="showImage(this.src)">
         </div>
     </div>
@@ -86,7 +86,14 @@
     }
 </script>
 
-
+<div id="footer-placeholder"></div>
+<script>
+    fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+</script>
 
 
 <!-- Bootstrap JS（包含 Popper） -->
