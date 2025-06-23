@@ -3,6 +3,8 @@
 
 body {
     font-family: 'LXGW WenKai', serif;
+    background-color: #000;
+    color: #fff;
 }
 
 /* 导航栏链接样式 */
@@ -11,12 +13,10 @@ body {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .navbar-link:hover,
 .navbar-link:focus {
     color: rgba(255, 255, 255, 1); /* 纯白 */
 }
-
 .navbar-link:visited {
     color: rgba(255, 255, 255, 0.7); /* 访问后保持同色 */
 }
@@ -32,6 +32,7 @@ body {
     display: inline;
 }
 
+/*登录、注册按钮样式*/
 .custom-btn {
     color: #fff;
     background-color: transparent;
@@ -42,7 +43,6 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
 .custom-btn:hover {
     background-color: #27a776;
     border-color: #27a776;
@@ -50,8 +50,7 @@ body {
 }
 
 
-
-
+/*图片展示*/
 .img-unified {
     width: 100%;
     height: 200px;         /* 你可以根据需要改为 220px 或 180px */
@@ -59,22 +58,20 @@ body {
     border-radius: 10px;   /* 圆角效果 */
 }
 
-body {
-    background-color: #000;
-    color: #fff;
-}
 
+/*导航栏样式*/
 .navbar-fixed {
     background-color: #000; /* 或改成你想要的颜色 */
     z-index: 1030;
 }
-
 .navbar-custom {
     background-color: #000;
     z-index: 1030;
     border-bottom: 1px solid #444;
 }
 
+
+/*页脚样式*/
 .footer {
     background-color: #0d0d0d;
     border-top: 1px solid #555;  /* 和导航栏边框颜色一致 */
@@ -82,6 +79,7 @@ body {
     padding: 20px 0;
     text-align: center;
 }
+/*页脚图标样式*/
 .icon-circle {
     display: inline-flex;
     align-items: center;
@@ -95,18 +93,17 @@ body {
     text-decoration: none;
     transition: border-color 0.3s ease, color 0.3s ease;
 }
-
 .icon-circle:hover {
     border-color: #27a776;            /* 悬停变绿 */
     color: #27a776;                   /* 图标悬停变绿 */
 }
-
 .icon-circle svg {
     width: 18px;
     height: 18px;
     fill: currentColor;               /* 填充跟随color */
 }
 
+/*footer署名样式*/
 .highlighted {
     color: #27a776;
     font-weight: bold;
