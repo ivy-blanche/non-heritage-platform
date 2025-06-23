@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>档案管理系统</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <h2>档案管理</h2>
+    <nav>
+        <ul>
+            <li><a href="#">仪表盘</a></li>
+
+            <li class="has-submenu">
+                <a href="javascript:void(0)">档案管理 ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">所有档案</a></li>
+                    <li><a href="#">添加新档案</a></li>
+                    <li><a href="#">档案搜索</a></li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <a href="javascript:void(0)">项目管理 ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">所有项目</a></li>
+                    <li><a href="#">添加项目</a></li>
+                    <li><a href="#">项目分类</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">地区管理</a></li>
+            <li><a href="#">媒体资料</a></li>
+            <li><a href="#">用户权限</a></li>
+            <li><a href="#">系统设置</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<script>
+    document.querySelectorAll('.has-submenu').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+<header class="topbar">
+    <div class="topbar-title">非遗传承人档案管理系统</div>
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+           id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/user.jpg" alt="头像" width="40" height="40" class="rounded-circle me-2">
+            <span class="d-none d-lg-inline">小白</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-small shadow" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" href="#">我的资料</a></li>
+            <li><a class="dropdown-item" href="#">设置</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">退出登录</a></li>
+        </ul>
+    </div>
+
+</header>
+
+
+<!-- Bootstrap JS（在 body 末尾） -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

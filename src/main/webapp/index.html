@@ -5,18 +5,13 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-
-
-
+    <link rel="stylesheet" href="css/content.css">
 
 </head>
 <body>
 
+<!--引用navbar-->
 <div id="navbar-placeholder"></div>
-
-<!-- 页面其它内容 -->
-
 <script>
     fetch("navbar.html")
         .then(res => res.text())
@@ -25,14 +20,15 @@
         });
 </script>
 
+<!--banner-->
 <section class="text-center py-5" >
     <h1 class="fw-bold fs">
         传承 <span class="highlight-block">千年技艺</span>，点亮数字之光
     </h1>
-
     <p class="lead mt-3" >将代县106项非遗项目数字化呈现，守护文化的温度与记忆。</p>
 </section>
 
+<!--图片展示区域-->
 <section class="px-3 py-5"> <!-- 左右边距设为很小 -->
     <div class="row g-2"> <!-- 每张图之间的间隙为 2（约 0.5rem） -->
         <!-- 第一行 -->
@@ -74,6 +70,7 @@
     </div>
 </section>
 
+<!--图片点击放大功能-->
 <div class="modal fade" id="imgModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content bg-transparent border-0">
@@ -83,24 +80,10 @@
         </div>
     </div>
 </div>
-
 <script>
     function showImage(src) {
         document.getElementById("modalImage").src = src;
     }
-</script>
-
- 
-
-
-
-<div id="footer-placeholder"></div>
-<script>
-    fetch("footer.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
 </script>
 
 
@@ -108,9 +91,6 @@
 
 <!-- Bootstrap JS（包含 Popper） -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
 
 </body>
 </html>
