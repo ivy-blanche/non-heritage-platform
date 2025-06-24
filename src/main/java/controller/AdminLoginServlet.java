@@ -4,15 +4,15 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
-import model.User;
-import service.UserService;
+import model.Admin;
+import service.AdminService;
 
 import java.io.IOException;
 
-@WebServlet("/login")
-public class UserLoginServlet extends HttpServlet {
+@WebServlet("/adminlogin")
+public class AdminLoginServlet extends HttpServlet {
 
-    private UserService userService = new UserService();
+    private AdminService adminService = new AdminService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -23,15 +23,16 @@ public class UserLoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        User user = userService.login(username, password);
+        Admin admin = adminService.login(username, password);
 
-        if (user != null) {
+        if (admin != null) {
             HttpSession session = req.getSession();
-            session.setAttribute("user", user);
-            resp.sendRedirect(req.getContextPath() + "/index.html");
+            session.setAttribute("admin", admin);
+            resp.sendRedirect(req.getContextPath() + "/admin/dashboard.html"); // 管理员主页
         } else {
             req.setAttribute("error", "用户名或密码错误");
-            req.getRequestDispatcher("/user_login.html").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/admin/admin-login.html");
+
         }
     }
 }
