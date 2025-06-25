@@ -24,17 +24,19 @@
     </dependency>
 
     <dependency>
-      <groupId>jakarta.servlet</groupId>
-      <artifactId>jakarta.servlet-api</artifactId>
-      <version>5.0.0</version> <!-- Tomcat 10 对应的版本 -->
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
+
 
     <dependency>
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf</artifactId>
-      <version>3.1.1.RELEASE</version> <!-- 可以替换为最新版本 -->
+      <version>3.0.15.RELEASE</version> <!-- 可以替换为最新版本 -->
     </dependency>
+
 
   </dependencies>
   <build>

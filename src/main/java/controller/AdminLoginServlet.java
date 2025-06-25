@@ -1,8 +1,8 @@
 package controller;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
 
 import model.Admin;
 import service.AdminService;
@@ -28,11 +28,11 @@ public class AdminLoginServlet extends HttpServlet {
         if (admin != null) {
             HttpSession session = req.getSession();
             session.setAttribute("admin", admin);
-            resp.sendRedirect(req.getContextPath() + "/admin/dashboard.html"); // 管理员主页
+            resp.sendRedirect(req.getContextPath() + "/admin/dashboard"); // 登录成功跳转后台主页
         } else {
             req.setAttribute("error", "用户名或密码错误");
-            resp.sendRedirect(req.getContextPath() + "/admin/admin-login.html");
-
+            // 使用请求转发回登录页面，保持错误信息
+            req.getRequestDispatcher("/admin/admin-login.html").forward(req, resp);
         }
     }
 }
