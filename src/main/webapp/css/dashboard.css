@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: "Microsoft YaHei", sans-serif;
     background-color: #121212;
+    color: white;
 }
 
 .sidebar {
@@ -29,7 +30,7 @@ body {
 .sidebar nav li {
     padding: 10px 20px;
     cursor: pointer;
-    border-left: 3px solid transparent;  /* 默认占位，防止跳动 */
+    border-left: 3px solid transparent; /* 默认占位，防止跳动 */
     transition: background-color 0.2s ease, color 0.2s ease, border-left 0.2s ease;
 }
 
@@ -40,7 +41,7 @@ body {
     transition: color 0.2s ease;
 }
 
-/* 悬停时：文字绿色，右边线绿色，背景保持黑色 */
+/* 悬停时：文字绿色，左边线绿色，背景保持黑色 */
 .sidebar nav li:hover {
     background-color: #000000;
     border-left: 3px solid #27a776;
@@ -77,7 +78,7 @@ body {
     display: block;
 }
 
-
+/* 顶部导航栏 */
 .topbar {
     position: fixed;
     top: 0;
@@ -94,3 +95,25 @@ body {
     z-index: 1000;
     border-bottom: 1px solid #2e2e2e;
 }
+
+
+/* 表格样式 */
+table.table {
+    background-color: #121212;
+    color: white;
+}
+
+/* 操作按钮样式 */
+.btn-edit, .btn-delete {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    background-color: #1d8890; /* 悬停变绿色 */
+    color: white;
+    border-color: #28a745;
+}
+
