@@ -1,14 +1,14 @@
-package service;
+package service.admin;
 
-import dao.AdminDao;
-import dao.impl.AdminDaoImpl;
+import dao.admin.AdminDao;
+import dao.impl.admin.AdminDaoImpl;
 import model.Admin;
 
 /**
  * AdminService 类
  * 负责处理管理员相关的业务逻辑，如登录验证等
  */
-public class AdminService {
+public class AdminLoginService {
 
     // 数据访问对象，用于操作管理员数据表
     private AdminDao adminDao = new AdminDaoImpl();

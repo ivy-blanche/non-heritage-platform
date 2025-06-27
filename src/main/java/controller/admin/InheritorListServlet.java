@@ -1,10 +1,10 @@
-package controller;
+package controller.admin;
 
+import controller.BaseServlet;
 import model.Inheritor;
-import service.InheritorService;
+import service.user.InheritorService;
 import org.thymeleaf.context.WebContext;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;

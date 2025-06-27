@@ -1,6 +1,6 @@
-package dao.impl;
+package dao.impl.user;
 
-import dao.UserDao;
+import dao.user.UserDao;
 import model.User;
 import utils.DBUtil;
 
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 /**
  * UserDaoImpl 类
  * 实现 UserDao 接口，负责用户数据的数据库访问操作
- *
+ * <p>
  * 当前仅实现了通过用户名查找用户的方法
  */
 public class UserDaoImpl implements UserDao {

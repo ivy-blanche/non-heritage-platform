@@ -1,18 +1,18 @@
-package controller;
+package controller.admin;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import model.Admin;
-import service.AdminService;
+import service.admin.AdminLoginService;
 
 import java.io.IOException;
 
 /**
  * AdminLoginServlet 类
  * 处理管理员登录请求的 Servlet 控制器
- *
+ * <p>
  * 路径映射：/adminlogin
  * 功能说明：
  * - 接收管理员登录表单提交的用户名和密码
@@ -23,7 +23,7 @@ import java.io.IOException;
 @WebServlet("/adminlogin")
 public class AdminLoginServlet extends HttpServlet {
 
-    private AdminService adminService = new AdminService();
+    private AdminLoginService adminService = new AdminLoginService();
 
     /**
      * 处理管理员登录的 POST 请求

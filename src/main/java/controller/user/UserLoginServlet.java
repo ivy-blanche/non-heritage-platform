@@ -1,18 +1,18 @@
-package controller;
+package controller.user;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import model.User;
-import service.UserService;
+import service.user.UserService;
 
 import java.io.IOException;
 
 /**
  * UserLoginServlet 类
  * 处理用户登录请求的 Servlet 控制器
- *
+ * <p>
  * 路径映射：/login
  * 功能说明：
  * - 接收登录表单提交的用户名和密码

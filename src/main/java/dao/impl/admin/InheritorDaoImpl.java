@@ -1,6 +1,6 @@
-package dao.impl;
+package dao.impl.admin;
 
-import dao.InheritorDao;
+import dao.admin.InheritorDao;
 import model.Inheritor;
 import utils.DBUtil;
 

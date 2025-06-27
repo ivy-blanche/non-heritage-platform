@@ -1,7 +1,7 @@
-package service;
+package service.user;
 
-import dao.UserDao;
-import dao.impl.UserDaoImpl;
+import dao.user.UserDao;
+import dao.impl.user.UserDaoImpl;
 import model.User;
 
 /**

@@ -1,6 +1,6 @@
-package dao.impl;
+package dao.impl.admin;
 
-import dao.AdminDao;
+import dao.admin.AdminDao;
 import model.Admin;
 import utils.DBUtil;
 
