@@ -3,92 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>档案管理系统</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
-    <!-- 这里用 thymeleaf 解析路径，自动带上项目上下文 -->
-    <link rel="stylesheet" th:href="@{/css/dashboard.css?v=20250626}"/>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
 </head>
 <body>
+
 <aside class="sidebar">
-    <h2>档案管理</h2>
-    <nav>
+
+    <div class="admin-info text-center">
+        <!-- 头像URL动态渲染 -->
+        <img th:src="@{/${admin.avatarUrl}}" alt="管理员头像" class="admin-avatar"/>
+        <div class="admin-name" th:text="${admin.fullName}">管理员姓名</div>
+        <div class="admin-title" th:text="${admin.title}">管理员职称</div>
+    </div>
+
+    <nav class="mt-4">
         <ul>
-
-            <li class="has-submenu">
-                <a href="javascript:void(0)">档案管理 ▾</a>
-                <ul class="submenu">
-                    <li><a href="#">所有档案</a></li>
-                    <li><a href="#">添加新档案</a></li>
-                    <li><a href="#">档案搜索</a></li>
-                </ul>
-            </li>
-
-            <li class="has-submenu">
-                <a href="javascript:void(0)">项目管理 ▾</a>
-                <ul class="submenu">
-                    <li><a href="#">所有项目</a></li>
-                    <li><a href="#">添加项目</a></li>
-                    <li><a href="#">项目分类</a></li>
-                </ul>
-            </li>
-
+            <li><a href="#">非遗项目</a></li>
+            <li><a href="#">传承人档案</a></li>
         </ul>
     </nav>
 </aside>
 
-<script>
-    document.querySelectorAll('.has-submenu').forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('active');
-        });
-    });
-</script>
-
-<header class="topbar">
-    <div class="topbar-title">非遗传承人档案管理系统</div>
-    <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-           id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="d-none d-lg-inline">小白</span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-small shadow" aria-labelledby="userDropdown">
-            <li><a class="dropdown-item" href="#">我的资料</a></li>
-            <li><a class="dropdown-item" href="#">设置</a></li>
-            <li>
-                <hr class="dropdown-divider"/>
-            </li>
-            <li><a class="dropdown-item" href="#">退出登录</a></li>
-        </ul>
-    </div>
-</header>
-
-<!-- 这里开始写中间管理内容 -->
-<main class="main-content p-4">
-    <h2>传承人档案管理</h2>
-    <table class="table table-striped table-dark">
-        <thead>
-        <tr>
-            <th>编号</th>
-            <th>姓名</th>
-            <th>民族</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="item : ${heritageList}">
-            <td th:text="${item.id}">编号</td>
-            <td th:text="${item.name}">姓名</td>
-            <td th:text="${item.ethnicity}">民族</td>
-            <td>
-                <a th:href="@{'/admin/inheritor/edit?id=' + ${item.id}}" class="btn btn-edit btn-sm me-2">编辑</a>
-                <a th:href="@{'/admin/inheritor/delete?id=' + ${item.id}}" class="btn btn-delete btn-sm">删除</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</main>
-
-<!-- Bootstrap JS（放在 body 末尾） -->
 <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
 
 </body>

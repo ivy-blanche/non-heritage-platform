@@ -7,7 +7,7 @@ body {
 
 .sidebar {
     width: 220px;
-    background-color: #191c24;
+    background: linear-gradient(to bottom, #726dff, #a07cff);
     color: #f0f0f0;
     height: 100vh;
     position: fixed;
@@ -16,104 +16,50 @@ body {
     padding-top: 20px;
 }
 
-.sidebar h2 {
-    text-align: center;
-    color: #ffc107;
-}
-
 .sidebar nav ul {
-    list-style: none;
+    list-style: none; /* 去掉圆点 */
     padding: 0;
-    margin-top: 30px;
+    margin: 0;
 }
 
 .sidebar nav li {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-left: 3px solid transparent; /* 默认占位，防止跳动 */
-    transition: background-color 0.2s ease, color 0.2s ease, border-left 0.2s ease;
+    margin-bottom: 8px;
 }
 
-.sidebar nav li > a {
-    color: inherit;
+.sidebar nav a {
+    color: white;
     text-decoration: none;
-    display: block;
-    transition: color 0.2s ease;
+    display: block; /* 让a标签充满li，方便悬停 */
+    padding: 8px 12px;
+    border-radius: 4px; /* 小方块圆角 */
+    transition: background-color 0.3s ease;
 }
 
-/* 悬停时：文字绿色，左边线绿色，背景保持黑色 */
-.sidebar nav li:hover {
-    background-color: #000000;
-    border-left: 3px solid #27a776;
+.sidebar nav a:hover {
+    background-color: #9e89ff;
 }
 
-.sidebar nav li:hover > a {
-    color: #27a776;
+
+.admin-info {
+    padding: 20px 10px 10px;
 }
 
-/* 子菜单 */
-.submenu {
-    display: none;
-    padding-left: 20px;
-    margin-top: 5px;
+.admin-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #27a776;
+    margin-bottom: 10px;
 }
 
-.submenu li {
-    padding: 5px 0;
-}
-
-.submenu li a {
-    color: #ccc;
-    font-size: 14px;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.submenu li a:hover {
-    color: #27a776;
-}
-
-/* 展开子菜单时显示 */
-.has-submenu.active .submenu {
-    display: block;
-}
-
-/* 顶部导航栏 */
-.topbar {
-    position: fixed;
-    top: 0;
-    left: 220px;
-    right: 0;
-    height: 60px;
-    background-color: #191c24;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
+.admin-name {
+    font-weight: bold;
     font-size: 18px;
-    z-index: 1000;
-    border-bottom: 1px solid #2e2e2e;
+    margin-bottom: 4px;
+    color: #fff;
 }
 
-
-/* 表格样式 */
-table.table {
-    background-color: #121212;
-    color: white;
+.admin-title {
+    font-size: 14px;
+    color: #bbb;
 }
-
-/* 操作按钮样式 */
-.btn-edit, .btn-delete {
-    color: white;
-    background-color: transparent;
-    border: 1px solid white;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-edit:hover, .btn-delete:hover {
-    background-color: #1d8890; /* 悬停变绿色 */
-    color: white;
-    border-color: #28a745;
-}
-

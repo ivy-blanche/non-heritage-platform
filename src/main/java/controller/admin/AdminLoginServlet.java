@@ -55,7 +55,7 @@ public class AdminLoginServlet extends HttpServlet {
         } else {
             // 登录失败，设置错误提示信息，转发回登录页面
             req.setAttribute("error", "用户名或密码错误");
-            req.getRequestDispatcher("/admin/admin-login.html").forward(req, resp);
+            req.getRequestDispatcher("/admin/admin_login.html").forward(req, resp);
         }
     }
 }
