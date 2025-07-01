@@ -1,0 +1,189 @@
+.top-right-buttons {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.action-button {
+    background-color: #121212;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #1f1f1f;
+    border-color: #888;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: "Microsoft YaHei", sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: auto;
+    background-color: #1c1c1c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #9e89ff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.form-actions .submit-btn {
+    background-color: #6c63ff;
+    color: #fff;
+}
+
+.form-actions .save-btn {
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+.form-actions .cancel-btn {
+    background-color: #222;
+    color: #bbb;
+}
+
+.form-actions button:hover {
+    opacity: 0.85;
+}
+
+/* 顶部按钮组样式（如需复用） */
+.top-right-buttons {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.action-button {
+    background-color: #121212;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #1f1f1f;
+    border-color: #888;
+}
+
+.heritage-list {
+    margin-top: 80px;
+}
+
+.heritage-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0;
+}
+
+.heritage-name-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.heritage-name-link:hover {
+    text-decoration: underline;
+}
+
+.heritage-actions a {
+    margin-left: 12px;
+    color: #aaa;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid #555;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.heritage-actions a:hover {
+    background-color: #1f1f1f;
+    color: #fff;
+}

@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>档案管理系统</title>
+    <meta charset="UTF-8"/>
+    <title>档案管理系统首页</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
+    <style>
+        .sidebar nav a.active {
+            background-color: #9e89ff;
+        }
+    </style>
 </head>
 <body>
 
-<aside class="sidebar">
+<div th:replace="fragments/sidebar :: sidebar('', ${admin})"></div>
 
-    <div class="admin-info text-center">
-        <!-- 头像URL动态渲染 -->
-        <img th:src="@{/${admin.avatarUrl}}" alt="管理员头像" class="admin-avatar"/>
-        <div class="admin-name" th:text="${admin.fullName}">管理员姓名</div>
-        <div class="admin-title" th:text="${admin.title}">管理员职称</div>
+<div style="margin-left: 220px; padding: 20px;">
+
+    <h2 style="color: #fff; font-size: 24px;">欢迎回来，<span th:text="${admin.fullName}">管理员</span></h2>
+
+    <div style="display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px; background-color: #1c1c1c; border-left: 4px solid #6c63ff; padding: 20px; border-radius: 6px;">
+            <div style="font-size: 32px; font-weight: bold;">106</div>
+            <div style="color: #bbb;">非遗项目总数</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; background-color: #1c1c1c; border-left: 4px solid #27a776; padding: 20px; border-radius: 6px;">
+            <div style="font-size: 32px; font-weight: bold;">42</div>
+            <div style="color: #bbb;">传承人总数</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; background-color: #1c1c1c; border-left: 4px solid #ffa726; padding: 20px; border-radius: 6px;">
+            <div style="font-size: 32px; font-weight: bold;">15</div>
+            <div style="color: #bbb;">待处理预约</div>
+        </div>
     </div>
 
-    <nav class="mt-4">
-        <ul>
-            <li><a href="#">非遗项目</a></li>
-            <li><a href="#">传承人档案</a></li>
-        </ul>
-    </nav>
-</aside>
+    <div style="margin-top: 40px;">
+        <h4 style="color: #fff; margin-bottom: 20px;">快捷操作</h4>
+        <div style="display: flex; gap: 16px;">
+            <a href="/heritageUpdate.html" class="action-button">➕ 添加非遗项目</a>
+            <a href="/inheritorUpdate.html" class="action-button">➕ 添加传承人</a>
+        </div>
+    </div>
+
+
+</div>
 
 <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
 

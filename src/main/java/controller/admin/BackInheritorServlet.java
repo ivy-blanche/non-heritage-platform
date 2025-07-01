@@ -9,8 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet("/admin/dashboard")
-public class AdminDashboardServlet extends BaseServlet {
+@WebServlet("/admin/backinheritor")
+public class BackInheritorServlet extends BaseServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -26,8 +26,8 @@ public class AdminDashboardServlet extends BaseServlet {
 
         WebContext context = new WebContext(req, resp, req.getServletContext());
         context.setVariable("admin", admin);
-        context.setVariable("activeMenu", ""); // 首页不高亮菜单
+        context.setVariable("activeMenu", "backinheritor"); // 传承人档案高亮
 
-        templateEngine.process("admin/dashboard", context, resp.getWriter());
+        templateEngine.process("admin/backinheritor", context, resp.getWriter());
     }
 }

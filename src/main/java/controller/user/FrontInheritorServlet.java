@@ -18,8 +18,6 @@ public class FrontInheritorServlet extends BaseServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
 
-        // 传给模板的数据，例如：
-        // context.setVariable("message", "欢迎来到非遗项目页面");
 
         templateEngine.process("user/heritage", context, resp.getWriter());
     }

@@ -29,14 +29,18 @@ body {
 .sidebar nav a {
     color: white;
     text-decoration: none;
-    display: block; /* 让a标签充满li，方便悬停 */
+    display: block;
     padding: 8px 12px;
-    border-radius: 4px; /* 小方块圆角 */
-    transition: background-color 0.3s ease;
+    border: none;
+    border-left: 2px solid transparent;
+    background-color: transparent;
+    transition: none; /* 禁用过渡，防止光边 */
 }
 
-.sidebar nav a:hover {
+.sidebar nav a:hover,
+.sidebar nav a.active {
     background-color: #9e89ff;
+    border-left: 3px solid white;
 }
 
 

@@ -1,0 +1,24 @@
+<aside class="sidebar" th:fragment="sidebar (activeMenu, admin)">
+    <div class="admin-info text-center">
+        <img th:src="@{${admin.avatarUrl}}" alt="管理员头像" class="admin-avatar"/>
+        <div class="admin-name" th:text="${admin.fullName}">管理员姓名</div>
+        <div class="admin-title" th:text="${admin.title}">管理员职称</div>
+    </div>
+
+    <nav class="mt-4">
+        <ul>
+            <li>
+                <a th:href="@{/admin/backheritage}"
+                   th:classappend="${activeMenu} == 'backheritage' ? 'active' : ''">
+                    非遗项目
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/backinheritor}"
+                   th:classappend="${activeMenu} == 'backinheritor' ? 'active' : ''">
+                    传承人档案
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
