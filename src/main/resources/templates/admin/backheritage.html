@@ -19,7 +19,7 @@
 <div style="margin-left: 220px; padding: 20px;">
 
     <div class="top-right-buttons">
-        <a th:href="@{/heritageUpdate.html}" class="action-button">Add</a>
+        <a th:href="@{/admin/heritage/add}" class="action-button">Add</a>
     </div>
 
     <div class="heritage-list">
@@ -27,8 +27,8 @@
             <a th:href="@{'/admin/heritage/detail?id=' + ${item.id}}" th:text="${item.name}"
                class="heritage-name-link"></a>
             <div class="heritage-actions">
-                <a href="#" class="edit-btn">Edit</a>
-                <a href="#" class="delete-btn">Delete</a>
+                <a th:href="@{'/admin/heritage/edit?id=' + ${item.id}}" class="action-button edit-btn">Edit</a>
+                <a href="#" class="action-button delete-btn">Delete</a>
             </div>
         </div>
     </div>

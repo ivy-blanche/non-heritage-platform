@@ -1,0 +1,71 @@
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/style.css');
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'LXGW WenKai', serif;
+    margin: 0;
+    padding: 40px;
+}
+
+.form-container {
+    background-color: transparent;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* label 普通字体，没有下边框 */
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #cccccc;
+}
+
+/* 下划线出现在真实数据下方 */
+input[readonly] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #4da3ff;
+    color: #e0e0e0;
+    font-size: 16px;
+    padding: 6px 0;
+    outline: none;
+    width: 100%;
+}
+
+/* 两个字段一行 */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* 描述显示：不使用 textarea，而是 div 显示纯文本 */
+.description-box {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #4da3ff;
+    color: #e0e0e0;
+    font-size: 16px;
+    padding: 6px 0;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}

@@ -120,36 +120,7 @@ textarea {
     opacity: 0.85;
 }
 
-/* 顶部按钮组样式（如需复用） */
-.top-right-buttons {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    display: flex;
-    gap: 12px;
-    z-index: 1000;
-}
-
-.action-button {
-    background-color: #121212;
-    color: white;
-    border: 1px solid #555;
-    border-radius: 20px;
-    padding: 6px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.action-button:hover {
-    background-color: #1f1f1f;
-    border-color: #888;
-}
-
+/* 非遗项目列表样式 */
 .heritage-list {
     margin-top: 80px;
 }
@@ -166,24 +137,32 @@ textarea {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.2s;
 }
 
 .heritage-name-link:hover {
-    text-decoration: underline;
+    color: #66ccff;
+    text-decoration: none;
 }
 
+/* Edit 和 Delete 按钮，和 Add 按钮样式完全一致 */
 .heritage-actions a {
-    margin-left: 12px;
-    color: #aaa;
+    background-color: #121212; /* 页面背景色 */
+    border-radius: 20px;
+    padding: 6px 16px;
     font-size: 14px;
+    cursor: pointer;
     text-decoration: none;
-    border: 1px solid #555;
-    padding: 4px 10px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #555; /* 和 Add 按钮边框一致 */
+    color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .heritage-actions a:hover {
-    background-color: #1f1f1f;
-    color: #fff;
+    background-color: #1f1f1f; /* 和 Add 按钮悬停背景色一致 */
+    border-color: #888;
+    color: white;
 }

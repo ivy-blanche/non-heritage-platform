@@ -1,0 +1,99 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: "Microsoft YaHei", sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+.form-container {
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* 蓝色下划线样式 */
+input[type="text"],
+textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #6c63ff;
+    color: #ffffff;
+    padding: 10px 4px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: #9e89ff;
+}
+
+/* 描述字段 */
+textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+/* 操作按钮 */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 按钮颜色 */
+.save-btn {
+    background-color: #6c63ff;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #333;
+    color: #ccc;
+}
+
+.save-btn:hover,
+.cancel-btn:hover {
+    opacity: 0.85;
+}
