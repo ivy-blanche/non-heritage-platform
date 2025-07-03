@@ -1,4 +1,4 @@
-package controller.admin;
+package controller.admin.backheritage;
 
 import controller.BaseServlet;
 import dao.admin.HeritageDao;
@@ -36,13 +36,13 @@ public class HeritageEditServlet extends BaseServlet {
         ctx.setVariable("heritage", heritage);
 
         resp.setContentType("text/html;charset=UTF-8");
-        templateEngine.process("admin/heritage-edit", ctx, resp.getWriter());
+        templateEngine.process("admin/heritagePages/heritage-edit", ctx, resp.getWriter());
     }
 
     // 提交编辑数据
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+
         req.setCharacterEncoding("UTF-8");
 
         String id = req.getParameter("id");

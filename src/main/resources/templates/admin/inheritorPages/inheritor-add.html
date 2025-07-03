@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>新增传承人档案</title>
+    <link rel="stylesheet" th:href="@{/css/heritageadd.css}"/>
+</head>
+<body>
+
+<div class="form-container" style="max-width: 700px; margin: 20px auto;">
+
+    <h2>新增传承人档案</h2>
+
+    <!-- 错误提示 -->
+    <div th:if="${error == 'exists'}" style="color: red; margin-bottom: 10px;">
+        传承人ID已存在，请更换一个ID。
+    </div>
+    <div th:if="${error == 'fail'}" style="color: red; margin-bottom: 10px;">
+        添加失败，请重试。
+    </div>
+
+    <form method="post" th:action="@{/admin/inheritor/add}">
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="id">传承人ID：</label>
+                <input type="text" id="id" name="id" placeholder="请输入传承人ID" required
+                       th:value="${inheritor != null} ? ${inheritor.id} : ''"/>
+            </div>
+            <div class="form-group half">
+                <label for="gender">性别：</label>
+                <input type="text" id="gender" name="gender" placeholder="请输入性别" required
+                       th:value="${inheritor != null} ? ${inheritor.gender} : ''"/>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" placeholder="请输入姓名" required
+                       th:value="${inheritor != null} ? ${inheritor.name} : ''"/>
+            </div>
+            <div class="form-group half">
+                <label for="ethnicity">民族：</label>
+                <input type="text" id="ethnicity" name="ethnicity" placeholder="请输入民族" required
+                       th:value="${inheritor != null} ? ${inheritor.ethnicity} : ''"/>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="category">类别：</label>
+                <input type="text" id="category" name="category" placeholder="请输入类别" required
+                       th:value="${inheritor != null} ? ${inheritor.category} : ''"/>
+            </div>
+            <div class="form-group half">
+                <label for="project_name">项目名称：</label>
+                <input type="text" id="project_name" name="project_name" placeholder="请输入项目名称" required
+                       th:value="${inheritor != null} ? ${inheritor.project_name} : ''"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="project_id">项目ID：</label>
+            <input type="text" id="project_id" name="project_id" placeholder="请输入项目ID" required
+                   th:value="${inheritor != null} ? ${inheritor.project_id} : ''"/>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">个人简介：</label>
+            <textarea id="bio" name="bio" rows="5" placeholder="请输入个人简介" required
+                      th:text="${inheritor != null} ? ${inheritor.bio} : ''"></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="save-btn">保存</button>
+            <button type="button" class="cancel-btn" onclick="history.back()">取消</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

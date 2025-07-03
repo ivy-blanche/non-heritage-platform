@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>非遗项目</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
+    <link rel="stylesheet" th:href="@{/css/backbase.css}"/>
+    <style>
+        .sidebar nav a.active {
+            background-color: #9e89ff;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/sidebar :: sidebar('backheritage', ${admin})"></div>
+
+<div style="margin-left: 220px; padding: 20px;">
+
+    <div class="top-right-buttons">
+        <a th:href="@{/admin/heritage/add}" class="action-button">Add</a>
+    </div>
+
+    <div class="heritage-list">
+        <div th:each="item : ${heritageList}" class="heritage-row">
+            <a th:href="@{'/admin/heritage/detail?id=' + ${item.id}}" th:text="${item.name}"
+               class="heritage-name-link"></a>
+            <div class="heritage-actions">
+                <a th:href="@{'/admin/heritage/edit?id=' + ${item.id}}" class="action-button edit-btn">Edit</a>
+
+                <!-- 注意：用 data-id 记录要删除的 ID -->
+                <a href="#" class="action-button delete-btn"
+                   th:attr="data-id=${item.id}"
+                   data-bs-toggle="modal"
+                   data-bs-target="#confirmDeleteModal">
+                    Delete
+                </a>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- 删除确认模态框 -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">确认删除</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="关闭"></button>
+            </div>
+            <div class="modal-body">
+                你确定要删除这个非遗项目吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <a id="confirmDeleteBtn" href="#" class="btn btn-danger">确定删除</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+<script th:inline="javascript">
+    const ctxPath = [[${#httpServletRequest.contextPath}]];
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const heritageId = this.getAttribute('data-id');
+                confirmDeleteBtn.href = ctxPath + '/admin/heritage/delete?id=' + encodeURIComponent(heritageId);
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>

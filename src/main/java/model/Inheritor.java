@@ -3,74 +3,92 @@ package model;
 public class Inheritor {
     private String id;
     private String name;
-    private String ethnicity;
     private String gender;
+    private String ethnicity;
     private String category;
-    private String project_name;
-    private String project_id;
+    private String projectName;
+    private String projectId;
     private String bio;
 
-    public void setId(String id) {
+    // 无参构造器
+    public Inheritor() {
+    }
+
+    // 全参构造器（方便初始化）
+    public Inheritor(String id, String name, String gender, String ethnicity,
+                     String category, String projectName, String projectId, String bio) {
         this.id = id;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public void setEthnicity(String ethnicity) {
         this.ethnicity = ethnicity;
-    }
-
-    public void setProject_name(String project_name) {
-        this.project_name = project_name;
-    }
-
-    public void setCategory(String category) {
         this.category = category;
-    }
-
-    public void setProject_id(String project_id) {
-        this.project_id = project_id;
-    }
-
-    public void setBio(String bio) {
+        this.projectName = projectName;
+        this.projectId = projectId;
         this.bio = bio;
     }
 
+    // getter 和 setter 方法
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getEthnicity() {
-        return ethnicity;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getGender() {
         return gender;
     }
 
-    public String getProject_name() {
-        return project_name;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getEthnicity() {
+        return ethnicity;
+    }
+
+    public void setEthnicity(String ethnicity) {
+        this.ethnicity = ethnicity;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public String getProject_id() {
-        return project_id;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public String getBio() {
         return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }

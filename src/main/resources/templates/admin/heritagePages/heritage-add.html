@@ -3,37 +3,47 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>编辑非遗项目</title>
+    <title>新增非遗项目</title>
     <link rel="stylesheet" th:href="@{/css/heritageadd.css}"/>
 </head>
 <body>
 
 <div class="form-container" style="max-width: 700px; margin: 20px auto;">
 
-    <h2>编辑非遗项目</h2>
+    <h2>新增非遗项目</h2>
+
+    <!-- 错误提示 -->
+    <div th:if="${error == 'exists'}" style="color: red; margin-bottom: 10px;">
+        项目ID已存在，请更换一个ID。
+    </div>
+    <div th:if="${error == 'fail'}" style="color: red; margin-bottom: 10px;">
+        添加失败，请重试。
+    </div>
 
     <form method="post" th:action="@{/admin/heritage/add}">
         <div class="form-row">
             <div class="form-group half">
                 <label for="id">项目ID：</label>
-                <input type="text" id="id" name="id" th:value="${heritage.id}" readonly/>
+                <input type="text" id="id" name="id" placeholder="请输入项目ID" required
+                       th:value="${heritage != null} ? ${heritage.id} : ''"/>
             </div>
             <div class="form-group half">
                 <label for="category">类别：</label>
-                <input type="text" id="category" name="category" th:value="${heritage.category}"
-                       placeholder="请输入类别"/>
+                <input type="text" id="category" name="category" placeholder="请输入类别" required
+                       th:value="${heritage != null} ? ${heritage.category} : ''"/>
             </div>
         </div>
 
         <div class="form-group">
             <label for="name">名称：</label>
-            <input type="text" id="name" name="name" th:value="${heritage.name}" placeholder="请输入名称"/>
+            <input type="text" id="name" name="name" placeholder="请输入名称" required
+                   th:value="${heritage != null} ? ${heritage.name} : ''"/>
         </div>
 
         <div class="form-group">
             <label for="description">描述：</label>
-            <textarea id="description" name="description" rows="5" placeholder="请输入描述"
-                      th:text="${heritage.description}"></textarea>
+            <textarea id="description" name="description" rows="5" placeholder="请输入描述" required
+                      th:text="${heritage != null} ? ${heritage.description} : ''"></textarea>
         </div>
 
         <div class="form-actions">

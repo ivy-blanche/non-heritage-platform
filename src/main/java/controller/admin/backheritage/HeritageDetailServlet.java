@@ -1,4 +1,4 @@
-package controller.admin;
+package controller.admin.backheritage;
 
 import controller.BaseServlet;
 import dao.admin.HeritageDao;
@@ -38,6 +38,6 @@ public class HeritageDetailServlet extends BaseServlet {
 
         // 处理模板并写回响应
         resp.setContentType("text/html;charset=UTF-8");
-        templateEngine.process("admin/heritage-detail", ctx, resp.getWriter());
+        templateEngine.process("admin/heritagePages/heritage-detail", ctx, resp.getWriter());
     }
 }

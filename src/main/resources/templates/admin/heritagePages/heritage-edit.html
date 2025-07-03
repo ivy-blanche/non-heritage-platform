@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>新增非遗项目</title>
+    <title>编辑非遗项目</title>
     <link rel="stylesheet" th:href="@{/css/heritageadd.css}"/>
 </head>
 <body>
 
 <div class="form-container" style="max-width: 700px; margin: 20px auto;">
 
-    <h2>新增非遗项目</h2>
+    <h2>编辑非遗项目</h2>
 
-    <form method="post" th:action="@{/admin/heritage/add}">
+    <form method="post" th:action="@{/admin/heritage/edit}">
         <div class="form-row">
             <div class="form-group half">
                 <label for="id">项目ID：</label>
-                <input type="text" id="id" name="id" placeholder="请输入项目ID"/>
+                <input type="text" id="id" name="id" th:value="${heritage.id}" readonly/>
             </div>
             <div class="form-group half">
                 <label for="category">类别：</label>
-                <input type="text" id="category" name="category" placeholder="请输入类别"/>
+                <input type="text" id="category" name="category" th:value="${heritage.category}"
+                       placeholder="请输入类别"/>
             </div>
         </div>
 
         <div class="form-group">
             <label for="name">名称：</label>
-            <input type="text" id="name" name="name" placeholder="请输入名称"/>
+            <input type="text" id="name" name="name" th:value="${heritage.name}" placeholder="请输入名称"/>
         </div>
 
         <div class="form-group">
             <label for="description">描述：</label>
-            <textarea id="description" name="description" rows="5" placeholder="请输入描述"></textarea>
+            <textarea id="description" name="description" rows="5" placeholder="请输入描述"
+                      th:text="${heritage.description}"></textarea>
         </div>
 
         <div class="form-actions">

@@ -1,4 +1,3 @@
-// HeritageDao接口
 package dao.admin;
 
 import model.Heritage;
@@ -12,5 +11,10 @@ public interface HeritageDao {
 
     boolean add(Heritage heritage);
 
+    boolean existsById(String id);
+
+
     boolean update(Heritage heritage);
+
+    boolean deleteById(String id); // ✅ 新增的方法
 }

@@ -1,10 +1,10 @@
-package controller.admin;
+package controller.admin.backinheritor;
 
 import controller.BaseServlet;
 import model.Admin;
-import model.Heritage;
+import model.Inheritor;
 import org.thymeleaf.context.WebContext;
-import service.admin.HeritageService;
+import service.admin.InheritorService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,10 +12,10 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/admin/backheritage")
-public class BackHeritageServlet extends BaseServlet {
+@WebServlet("/admin/backinheritor")
+public class BackInheritorServlet extends BaseServlet {
 
-    private final HeritageService heritageService = new HeritageService();
+    private final InheritorService inheritorService = new InheritorService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,15 +30,13 @@ public class BackHeritageServlet extends BaseServlet {
 
         Admin admin = (Admin) session.getAttribute("admin");
 
-        // 查询所有非遗项目
-        List<Heritage> heritageList = heritageService.getAllHeritages();
+        List<Inheritor> inheritorList = inheritorService.getAllInheritors();
 
-        // 准备 thymeleaf 上下文
         WebContext context = new WebContext(req, resp, req.getServletContext());
         context.setVariable("admin", admin);
-        context.setVariable("heritageList", heritageList);
-        context.setVariable("activeMenu", "backheritage"); // 用于侧边栏高亮
+        context.setVariable("inheritorList", inheritorList);
+        context.setVariable("activeMenu", "backinheritor");
 
-        templateEngine.process("admin/backheritage", context, resp.getWriter());
+        templateEngine.process("admin/inheritorPages/backinheritor", context, resp.getWriter());
     }
 }
