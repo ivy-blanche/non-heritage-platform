@@ -46,15 +46,18 @@ body {
 
 .admin-info {
     padding: 20px 10px 10px;
+    margin-bottom: 30px; /* 增加 admin-info 和 nav 之间的距离 */
 }
 
 .admin-avatar {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 2px solid #27a776;
+    border: none; /* 去除绿色边框 */
     margin-bottom: 10px;
+    object-fit: cover; /* 可选：确保图片不变形 */
 }
+
 
 .admin-name {
     font-weight: bold;
@@ -66,4 +69,20 @@ body {
 .admin-title {
     font-size: 14px;
     color: #bbb;
+}
+
+.action-button {
+    text-decoration: none; /* 去除下划线 */
+    color: white; /* 文字白色 */
+    background-color: #6c63ff; /* 紫色背景 */
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #574fd6; /* 悬停时颜色加深 */
+    text-decoration: none; /* 悬停时仍无下划线 */
 }

@@ -5,59 +5,48 @@
     <title>管理员登录页面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/auth.css">
-    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/auth.css"/>
+    <link rel="stylesheet" href="css/layout.css"/>
 </head>
-
 <body>
-<!-- 左侧边栏 -->
-<aside class="sidebar">
-    <h2>菜单</h2>
-    <nav>
-        <ul>
-            <li><a href="index.html">平台首页</a></li>
-            <li><a href="#">系统介绍</a></li>
-            <li><a href="#">操作指南</a></li>
-            <li><a href="#">关于我们</a></li>
-            <li><a href="#">帮助中心</a></li>
-        </ul>
-    </nav>
-</aside>
 
-<!-- 主体区域 -->
-<section class="main-content">
-    <!-- 顶部导航栏 -->
-    <header class="top-nav">
-        <h1>非遗传承人档案管理系统</h1>
-    </header>
-    <!-- 登录区域 -->
-    <main class="login-area">
-        <h2 class="login-title">管理员登录</h2>
-        <form method="post" action="/non_heritage_platform_war_exploded/adminlogin">
 
-            <div class="mb-3">
-                <label for="username" class="form-label">用户名</label>
-                <input type="text" class="form-control" id="username" name="username" required/>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">密码</label>
-                <input type="password" class="form-control" id="password" name="password" required/>
-            </div>
-            <div class="d-grid">
-                <button type="submit" class="btn btn-login">登录</button>
-            </div>
-        </form>
-    </main>
-    <!-- 页脚 -->
-    <div id="footer-placeholder"></div>
-    <script>
-        fetch("footer_static.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("footer-placeholder").innerHTML = data;
-            });
-    </script>
-</section>
+<!-- 主内容区域 -->
+<div id="navbar-placeholder"></div>
+<script>
+    fetch("navbar_static.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+</script>
+
+<!-- 登录区域 -->
+<main class="login-area">
+    <form method="post" action="/non_heritage_platform_war_exploded/adminlogin">
+        <div class="mb-3">
+            <label for="username" class="form-label">用户名</label>
+            <input type="text" class="form-control" id="username" name="username" required/>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">密码</label>
+            <input type="password" class="form-control" id="password" name="password" required/>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-login">登录</button>
+        </div>
+    </form>
+</main>
+
+<!-- 页脚 -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch("footer_static.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+</script>
 
 
 </body>
