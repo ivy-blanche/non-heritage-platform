@@ -21,9 +21,10 @@ public class FrontHeritageServlet extends BaseServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
 
-
-        WebContext context = new WebContext(req, resp, getServletContext());
+        WebContext context;
+        context = new WebContext(req, resp, getServletContext());
 
         templateEngine.process("user/heritage", context, resp.getWriter());
+
     }
 }

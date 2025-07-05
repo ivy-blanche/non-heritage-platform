@@ -3,17 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <title>非遗项目</title>
-    <!-- 引入 Bootstrap（可选） -->
+    <!-- 引入 Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/fragment.css}" />
+    <style>
+        #img_2:hover{
+            width:150px;
+            background-color: #05b78b;
+            opacity: 0.8;
+            box-shadow: 0 30px 50px -10px rgba(0, 0,0, 0.8);
+        }
+        #img_2{
+            text-align: center;
+            height:680px;
+            width:100px;
+            font-size: 20px;
+            font-family: 华文宋体, serif;
+            font-weight: bold;
+            float: left;
+            opacity: 0.7;
+            background-color: #05b78b;
+        }
+        .nav{
+            width:60px;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.5s;
+            opacity: 0.6;
+        }
 
+    </style>
 </head>
 <body>
 
 <div th:replace="fragments/navbar :: navbar"></div>
-<div th:replace="fragments/footer :: footer"></div>
 
-<!-- 可选的 Bootstrap 脚本支持 -->
+<!-- 非遗项目展示区域 -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">非遗项目展示</h1>
+    <div class="row">
+        <!-- 非遗项目卡片 -->
+        <div class="col-md-4 mb-4" onclick="window.location.href='item1.html';">
+            <div class="card">
+                <img src="../img/pic9.jpg" class="card-img-top" alt="雁绣坊" id="div_yxf">
+                <div class="card-body">
+                    <h5 class="card-title" align="center">雁绣坊</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4" onclick="window.location.href='item2.html';">
+            <div class="card">
+                <img src="../img/pic10.jpeg" class="card-img-top" alt="佛教泥塑">
+                <div class="card-body">
+                    <h5 class="card-title" align="center">佛教泥塑</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4" onclick="window.location.href='item3.html';">
+            <div class="card">
+                <img src="../img/pic11.jpg" class="card-img-top" alt="峨口绕阁">
+                <div class="card-body">
+                    <h5 class="card-title">峨口绕阁</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="img_2"class="nav">
+    <div id="st-1"><a href="诗意旅行社1.html"><p>文艺产品</p></a></div>
+    <div id="st-2"><a href="诗意旅行社2.html"><p>特色建筑</p></a></div>
+    <div id="st-3"><a href="诗意旅行社5.html"><p></p></a></div>
+    <div id="st-4"><a href="诗意旅行社4.html"><p>特色景区</p></a></div>
+    <div id="st-5"><a href="诗意旅行社3.html"><p>特色景区</p></a></div>
+</div>
+<div id="img_3">
+    <a href="体育场.html">
+        <div id="bk1"></div></a>
+    <a href="云冈石窟.html">
+        <div id="bk2"></div></a>
+    <a href="关公庙.html">
+        <div id="bk3"></div></a>
+    <a href="壶口瀑布.html">
+        <div id="bk4"></div></a>
+    <a href="恒山.html">
+        <div id="bk5"></div></a>
+    <a href="植物园.html">
+        <div id="bk6"></div></a>
+</div>
+</div>
+
+
+<!-- Bootstrap 脚本支持 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
