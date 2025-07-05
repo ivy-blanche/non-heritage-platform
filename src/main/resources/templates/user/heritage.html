@@ -8,21 +8,87 @@
     <link rel="stylesheet" th:href="@{/css/fragment.css}" />
     <style>
         #img_2:hover{
-            width:150px;
+
             background-color: #05b78b;
-            opacity: 0.8;
+            opacity: 0.6;
             box-shadow: 0 30px 50px -10px rgba(0, 0,0, 0.8);
         }
+        #img_3{
+            position:absolute;
+            top:550px;
+            width:1050px;
+            height:500px;
+            float: left;
+            margin-left:300px;
+            margin-top: 150px;
+            transition: 0.4s;
+            border-radius: 20px;
+            opacity: 0.8;
+
+        }
+        body:hover #img_3{
+            width: 1400px;
+        }
         #img_2{
+            --body-text-color:WHITE;
             text-align: center;
             height:680px;
             width:100px;
             font-size: 20px;
             font-family: 华文宋体, serif;
+            color: white;
             font-weight: bold;
             float: left;
-            opacity: 0.7;
+            opacity: 0.5;
             background-color: #05b78b;
+        }
+        #bk1{
+            width:200px;
+            height:500px;
+            background-size: cover;
+            float: left;
+            background-repeat: no-repeat;
+            background-image: url(../img/pic9.jpg);
+            overflow:hidden;
+            border-radius: 10px;
+            transition: 0.5s;
+            box-shadow: 0 0 25px #000000;
+        }
+        #bk2{
+            width:200px;
+            height:500px;
+            background-size: cover;
+            float: left;
+            background-repeat: no-repeat;
+            background-image: url(../img/pic10.jpeg);
+            overflow:hidden;
+            border-radius: 10px;
+            transition: 0.5s;
+            box-shadow: 0 0 25px #000000;
+        }
+        #bk3{
+            width:200px;
+            height:500px;
+            background-size: cover;
+            float: left;
+            background-repeat: no-repeat;
+            background-image: url(../img/pic11.jpg);
+            overflow:hidden;
+            border-radius: 10px;
+            transition: 0.5s;
+            box-shadow: 0 0 25px #000000;
+        }
+        #bk4{
+            width:200px;
+            height:500px;
+            background-size: cover;
+            float: left;
+            background-repeat: no-repeat;
+            background-image: url(../img/pic4.jpg);
+            overflow:hidden;
+            border-radius: 10px;
+            transition: 0.5s;
+            box-shadow: 0 0 25px #000000;
         }
         .nav{
             width:60px;
@@ -63,18 +129,18 @@
             <div class="card">
                 <img src="../img/pic11.jpg" class="card-img-top" alt="峨口绕阁">
                 <div class="card-body">
-                    <h5 class="card-title">峨口绕阁</h5>
+                    <h5 class="card-title"align="center">峨口绕阁</h5>
                 </div>
             </div>
         </div>
     </div>
 
 <div id="img_2"class="nav">
-    <div id="st-1"><a href=""><p>文艺产品</p></a></div>
-    <div id="st-2"><a href="诗意旅行社2.html"><p>特色建筑</p></a></div>
-    <div id="st-3"><a href="诗意旅行社5.html"><p></p></a></div>
-    <div id="st-4"><a href="诗意旅行社4.html"><p>特色景区</p></a></div>
-    <div id="st-5"><a href="诗意旅行社3.html"><p>特色景区</p></a></div>
+    <div id="st-1"><a href=""><p style="color: white">文艺产品</p></a></div>
+    <div id="st-2"><a href="诗意旅行社2.html"><p style="color: white">特色建筑</p></a></div>
+    <div id="st-3"><a href="诗意旅行社5.html"><p style="color: white">辉煌泥塑</p></a></div>
+    <div id="st-4"><a href="诗意旅行社4.html"><p style="color: white">歌曲舞蹈</p></a></div>
+
 </div>
 <div id="img_3">
     <a href="体育场.html">
