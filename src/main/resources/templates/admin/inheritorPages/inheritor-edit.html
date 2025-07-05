@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>编辑传承人档案</title>
+    <link rel="stylesheet" th:href="@{/css/heritageadd.css}"/>
+</head>
+<body>
+
+<div class="form-container" style="max-width: 700px; margin: 20px auto;">
+    <h2>编辑传承人档案</h2>
+
+    <form method="post" th:action="@{/admin/inheritor/edit}">
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="id">传承人ID：</label>
+                <input type="text" id="id" name="id" readonly th:value="${inheritor.id}"/>
+            </div>
+            <div class="form-group half">
+                <label for="gender">性别：</label>
+                <input type="text" id="gender" name="gender" th:value="${inheritor.gender}" required/>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" th:value="${inheritor.name}" required/>
+            </div>
+            <div class="form-group half">
+                <label for="ethnicity">民族：</label>
+                <input type="text" id="ethnicity" name="ethnicity" th:value="${inheritor.ethnicity}" required/>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="category">类别：</label>
+                <input type="text" id="category" name="category" th:value="${inheritor.category}" required/>
+            </div>
+            <div class="form-group half">
+                <label for="project_name">项目名称：</label>
+                <input type="text" id="project_name" name="project_name" th:value="${inheritor.projectName}" required/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="project_id">项目ID：</label>
+            <input type="text" id="project_id" name="project_id" th:value="${inheritor.projectId}" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">个人简介：</label>
+            <textarea id="bio" name="bio" rows="5" th:text="${inheritor.bio}" required></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="save-btn">保存</button>
+            <button type="button" class="cancel-btn" onclick="history.back()">取消</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
