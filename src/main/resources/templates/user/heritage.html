@@ -7,88 +7,73 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/fragment.css}" />
     <style>
-        #img_2:hover{
 
-            background-color: #05b78b;
-            opacity: 0.6;
-            box-shadow: 0 30px 50px -10px rgba(0, 0,0, 0.8);
+        .card2 {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 400px;
+            height: 500px;
         }
-        #img_3{
-            position:absolute;
-            top:550px;
-            width:1050px;
-            height:500px;
-            float: left;
-            margin-left:300px;
-            margin-top: 150px;
-            transition: 0.4s;
-            border-radius: 20px;
-            opacity: 0.8;
+        .card2:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-        }
+
         body:hover #img_3{
             width: 1400px;
         }
-        #img_2{
-            --body-text-color:WHITE;
-            text-align: center;
-            height:680px;
-            width:100px;
-            font-size: 20px;
-            font-family: 华文宋体, serif;
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: none;
+            transition: transform 0.5s ease;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            font-weight: bold;
-            float: left;
-            opacity: 0.5;
-            background-color: #05b78b;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
         }
-        #bk1{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic9.jpg);
-            overflow:hidden;
-            border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+        .carousel .prev {
+            left: 10px;
         }
-        #bk2{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic10.jpeg);
-            overflow:hidden;
-            border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+        .carousel .next {
+            right: 10px;
         }
-        #bk3{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic11.jpg);
-            overflow:hidden;
-            border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+        .carousel .dots {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
         }
-        #bk4{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic4.jpg);
-            overflow:hidden;
-            border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+        .carousel .dots span {
+            cursor: pointer;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+        }
+        .carousel .dots span.active {
+            background-color: #717171;
         }
         .nav{
             width:60px;
@@ -97,7 +82,25 @@
             transition: 0.5s;
             opacity: 0.6;
         }
-
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: black;
+        }
+        tr:hover {
+            background-color: bisque;
+        }
+        tr:hover td{
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -106,59 +109,186 @@
 
 <!-- 非遗项目展示区域 -->
 <div class="container mt-5">
-    <h1 class="text-center mb-4">非遗项目展示</h1>
+    <h1 class="text-center mb-4">代县非遗</h1>
     <div class="row">
         <!-- 非遗项目卡片 -->
-        <div class="col-md-4 mb-4" onclick="window.location.href='item1.html';">
-            <div class="card">
-                <img src="../img/pic9.jpg" class="card-img-top" alt="雁绣坊" id="div_yxf">
-                <div class="card-body">
-                    <h5 class="card-title" align="center">雁绣坊</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4" onclick="window.location.href='item2.html';">
-            <div class="card">
-                <img src="../img/pic10.jpeg" class="card-img-top" alt="佛教泥塑">
-                <div class="card-body">
-                    <h5 class="card-title" align="center">佛教泥塑</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4" onclick="window.location.href='item3.html';">
-            <div class="card">
-                <img src="../img/pic11.jpg" class="card-img-top" alt="峨口绕阁">
-                <div class="card-body">
-                    <h5 class="card-title"align="center">峨口绕阁</h5>
-                </div>
+        <div class="carousel">
+            <img src="../img/pic1.jpg" style="height: 400px;" alt="Image 1" class="active">
+            <img src="../img/pic6.jpg" style="height: 400px;" alt="Image 2">
+            <img src="../img/pic4.jpg" style="height: 400px;" alt="Image 3">
+            <img src="../img/pic2.jpg" style="height: 400px;" alt="Image 3">
+            <img src="../img/pic9.jpg" style="height: 400px;" alt="Image 3">
+            <img src="../img/pic10.jpeg" style="height: 400px;" alt="Image 3">
+            <div class="prev" onclick="moveSlide(-1)">&#10094;</div>
+            <div class="next" onclick="moveSlide(1)">&#10095;</div>
+            <div class="dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot active" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
             </div>
         </div>
     </div>
 
-<div id="img_2"class="nav">
-    <div id="st-1"><a href=""><p style="color: white">文艺产品</p></a></div>
-    <div id="st-2"><a href="诗意旅行社2.html"><p style="color: white">特色建筑</p></a></div>
-    <div id="st-3"><a href="诗意旅行社5.html"><p style="color: white">辉煌泥塑</p></a></div>
-    <div id="st-4"><a href="诗意旅行社4.html"><p style="color: white">歌曲舞蹈</p></a></div>
-
-</div>
-<div id="img_3">
-    <a href="体育场.html">
-        <div id="bk1"></div></a>
-    <a href="云冈石窟.html">
-        <div id="bk2"></div></a>
-    <a href="关公庙.html">
-        <div id="bk3"></div></a>
-    <a href="壶口瀑布.html">
-        <div id="bk4"></div></a>
-    <a href="恒山.html">
-        <div id="bk5"></div></a>
-    <a href="植物园.html">
-        <div id="bk6"></div></a>
-</div>
-</div>
 
 
+
+</div>
+<hr>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">代县非遗3d展示</h1>
+    <div class="row">
+        <!-- 传承人卡片 -->
+        <div class="col-md-4 mb-4">
+            <div class="card2">
+                <img src="../img/pic4.jpg" style="height: 300px;" class="card-img-top" alt="泥塑">
+                <div class="card-body">
+                    <h5 class="card-title">精巧泥塑</h5>
+                    <p class="card-text">点击进入沉浸3d</p>
+                    <a href="inheritor1.html" class="btn btn-primary">查看详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card2">
+                <img src="../img/pic6.jpg" style="height: 300px;" class="card-img-top" alt="龙雕">
+                <div class="card-body">
+                    <h5 class="card-title">龙雕楼角</h5>
+                    <p class="card-text">点击进入沉浸3d</p>
+                    <a href="inheritor2.html" class="btn btn-primary">查看详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card2">
+                <img src="../img/pic9.jpg" class="card-img-top" style="height: 300px" alt="刺绣">
+                <div class="card-body">
+                    <h5 class="card-title">唯美刺绣</h5>
+                    <p class="card-text">点击进入沉浸3d</p>
+                    <a href="inheritor3.html" class="btn btn-primary">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div>
+    <h2 align="center">非遗项目信息表</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>剪纸艺术</td>
+            <td>传统手工艺</td>
+            <td>剪纸是一种传统的民间艺术，通过剪刀和纸张创作出各种图案。</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>京剧</td>
+            <td>传统戏剧</td>
+            <td>京剧是中国的一种传统戏曲形式，具有独特的唱腔和表演风格。</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>中医针灸</td>
+            <td>传统医药</td>
+            <td>中医针灸是一种通过针刺穴位来治疗疾病的传统医学方法。</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>皮影戏</td>
+            <td>传统戏剧</td>
+            <td>皮影戏是一种通过操纵皮影进行表演的传统戏剧形式。</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>中国书法</td>
+            <td>传统艺术</td>
+            <td>书法是中国传统的书写艺术，注重笔法和结构。</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>中国武术</td>
+            <td>传统体育</td>
+            <td>武术是中国传统的体育形式，包括各种拳法和器械。</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>中国茶艺</td>
+            <td>传统技艺</td>
+            <td>茶艺是一种通过泡茶和品茶来展示茶文化的传统技艺。</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>中国刺绣</td>
+            <td>传统手工艺</td>
+            <td>刺绣是一种通过针线在布料上绣出图案的传统手工艺。</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>中国古建筑</td>
+            <td>传统建筑</td>
+            <td>古建筑是中国传统的建筑形式，具有独特的结构和装饰。</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>中国民间故事</td>
+            <td>传统文学</td>
+            <td>民间故事是中国传统文学的重要组成部分，包含了许多传说和故事。</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>中国民间音乐</td>
+            <td>传统音乐</td>
+            <td>民间音乐是中国传统音乐的重要组成部分，具有丰富的地域特色。</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>中国民间舞蹈</td>
+            <td>传统舞蹈</td>
+            <td>民间舞蹈是中国传统舞蹈的重要组成部分，具有丰富的地域特色。</td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.carousel img');
+            let dots = document.querySelectorAll('.dot');
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        // 自动轮播
+        setInterval(() => {
+            moveSlide(1);
+        }, 3000); // 每3秒自动切换到下一张图片
+    </script>
+</div>
 <!-- Bootstrap 脚本支持 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
