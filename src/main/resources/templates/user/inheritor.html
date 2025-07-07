@@ -10,7 +10,7 @@
     <link rel="stylesheet" th:href="@{/css/fragment.css}"/>
     <style>
         body {
-            font-family: Arial, sans-serif;
+
             margin: 20px;
         }
         table {
@@ -119,28 +119,15 @@
         .btn-close {
             color: white;
         }
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-        .footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
+
+
     </style>
 </head>
 <body>
 
 <div th:replace="fragments/navbar :: navbar"></div>
-<div class="header">
-    <div class="container">
-        <h1>传承人档案</h1>
-        <p>探索非物质文化遗产的守护者，了解他们的故事与技艺</p>
-    </div>
-</div>
+
+
 
 <!-- 传承人展示区域 -->
 <div class="container">
@@ -275,72 +262,6 @@
                 <td id="category"></td>
                 <td id="description"></td>
             </tr>
-            <!--        <tr>-->
-            <!--            <td>2</td>-->
-            <!--            <td>京剧</td>-->
-            <!--            <td>传统戏剧</td>-->
-            <!--            <td>京剧是中国的一种传统戏曲形式，具有独特的唱腔和表演风格。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>3</td>-->
-            <!--            <td>中医针灸</td>-->
-            <!--            <td>传统医药</td>-->
-            <!--            <td>中医针灸是一种通过针刺穴位来治疗疾病的传统医学方法。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>4</td>-->
-            <!--            <td>皮影戏</td>-->
-            <!--            <td>传统戏剧</td>-->
-            <!--            <td>皮影戏是一种通过操纵皮影进行表演的传统戏剧形式。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>5</td>-->
-            <!--            <td>中国书法</td>-->
-            <!--            <td>传统艺术</td>-->
-            <!--            <td>书法是中国传统的书写艺术，注重笔法和结构。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>6</td>-->
-            <!--            <td>中国武术</td>-->
-            <!--            <td>传统体育</td>-->
-            <!--            <td>武术是中国传统的体育形式，包括各种拳法和器械。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>7</td>-->
-            <!--            <td>中国茶艺</td>-->
-            <!--            <td>传统技艺</td>-->
-            <!--            <td>茶艺是一种通过泡茶和品茶来展示茶文化的传统技艺。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>8</td>-->
-            <!--            <td>中国刺绣</td>-->
-            <!--            <td>传统手工艺</td>-->
-            <!--            <td>刺绣是一种通过针线在布料上绣出图案的传统手工艺。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>9</td>-->
-            <!--            <td>中国古建筑</td>-->
-            <!--            <td>传统建筑</td>-->
-            <!--            <td>古建筑是中国传统的建筑形式，具有独特的结构和装饰。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>10</td>-->
-            <!--            <td>中国民间故事</td>-->
-            <!--            <td>传统文学</td>-->
-            <!--            <td>民间故事是中国传统文学的重要组成部分，包含了许多传说和故事。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>11</td>-->
-            <!--            <td>中国民间音乐</td>-->
-            <!--            <td>传统音乐</td>-->
-            <!--            <td>民间音乐是中国传统音乐的重要组成部分，具有丰富的地域特色。</td>-->
-            <!--        </tr>-->
-            <!--        <tr>-->
-            <!--            <td>12</td>-->
-            <!--            <td>中国民间舞蹈</td>-->
-            <!--            <td>传统舞蹈</td>-->
-            <!--            <td>民间舞蹈是中国传统舞蹈的重要组成部分，具有丰富的地域特色。</td>-->
-            <!--        </tr>-->
 
             </tbody>
         </table>
@@ -367,6 +288,7 @@
 
 </div>>
 <div th:replace="fragments/footer :: footer"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

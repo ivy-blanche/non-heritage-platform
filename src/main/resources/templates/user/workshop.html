@@ -8,7 +8,7 @@
     <title>非遗工坊</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+
             margin: 0;
             padding: 0;
 
@@ -16,7 +16,7 @@
         }
         header {
             background-color: #333;
-            color: #fff;
+            color: #66ccff;
             padding: 10px 20px;
             text-align: center;
         }
@@ -25,7 +25,7 @@
             font-size: 2.5em;
         }
         .intro {
-            background-color: #fff;
+            background-color: #0d0d0d;
             padding: 20px;
             margin: 20px;
             border-radius: 10px;
@@ -34,11 +34,11 @@
         }
         .intro h2 {
             font-size: 1.5em;
-            color: #333;
+            color: #06d6a0;
         }
         .intro p {
             font-size: 1.2em;
-            color: #666;
+            color: #e0e0e0;
         }
         .container {
             display: flex;
@@ -139,15 +139,12 @@
 
 <div th:replace="fragments/navbar :: navbar"></div>
 
-<header>
-    <h1>非遗工坊</h1>
-</header>
 <div class="intro">
     <h2>学习非遗制作，传承非遗文化，守护中华文化</h2>
     <p>欢迎来到非遗工坊，这里是学习和传承非物质文化遗产的起点。</p>
 </div>
 <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+    <iframe src="../img/a4dda0591070e0eb4e73084a81e0c31a.mp4" frameborder="0" allowfullscreen></iframe>
 </div>
 <div class="container">
     <div class="book">
@@ -200,6 +197,7 @@
     <p>本教程通过实际项目案例，讲解如何应用HTML和CSS完成完整的网页设计。</p>
 </div>
 
+<div th:replace="fragments/footer :: footer"></div>
 
 </body>
 </html>
