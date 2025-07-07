@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>cixiu</title>
+  <!-- 引入 Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/fragment.css}"/>
+  <style>
+    .navbar {
+      background-color: black; /* 暗色背景 */
+      color: #fff; /* 文字颜色 */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      z-index: 1000; /* 确保导航栏在最上层 */
+    }
+
+    .navbar a {
+      color: #fff; /* 链接文字颜色 */
+      text-decoration: none; /* 去掉下划线 */
+      margin: 0 15px; /* 链接之间的间距 */
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline; /* 鼠标悬停时下划线 */
+    }
+
+    /* 页面内容样式 */
+    .content {
+      padding: 70px 20px; /* 顶部留出空间给导航栏 */
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 30px;
+      color: #333;
+    }
+
+    .content p {
+      font-size: 20px;
+      color: #666;
+    }
+    body{
+      background-image: url('../img/img_8.jpg');
+    }
+    #bodya {
+      color: #06d6a0;
+      background-image: url("../img/img_8.jng");
+      background-size:contain;
+      left: 400px;
+      top: -200px;
+      position: absolute;
+    }
+    .tutorial-container {
+      position: absolute;
+      color: #06d6a0;
+      top:500px;
+
+      width: 800px; /* 进一步加大框的宽度 */
+      padding: 40px;
+      border: 2px solid #000;
+      border-radius: 20px;
+      background-color: #0f0f0f;
+      position: relative;
+      overflow: hidden;
+    }
+    .tutorial-container::before {
+      content: '';
+      position: absolute;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+              45deg,
+              #ffcc00,
+              #ffcc00 15px,
+              #ff9900 15px,
+              #ff9900 30px
+      );
+      animation: move 5s linear infinite;
+      z-index: -1;
+    }
+    @keyframes move {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-100%, -100%);
+      }
+    }
+    .tutorial-content {
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .tutorial-content.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .tutorial-content h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .tutorial-content p {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+    .tutorial-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 25px 0;
+    }
+    .next-button {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .next-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <div class="logo">
+    <a href="#">Logo</a>
+  </div>
+  <div class="nav-links"  >
+    <div style="position: absolute;left: 550px;">
+      <a href="/non_heritage_platform_war_exploded/user/heritage">非遗项目</a>
+      <a href="/non_heritage_platform_war_exploded/user/heritage">传承人档案</a>
+      <a href="/non_heritage_platform_war_exploded/user/heritage">预约服务</a>
+      <a href="#/non_heritage_platform_war_exploded/user/heritage">非遗工坊</a>
+    </div></div>
+</div>
+
+<!-- 页面内容 -->
+<div class="content">
+  <h1 style="color: #06d6a0">雁绣工坊</h1>
+  <p>学习雁绣过程传承中华文化</p>
+</div>
+<div id="bodya">
+
+<div class="tutorial-container">
+  <div class="tutorial-content active" id="step1"style="top: 100px;">
+    <h2>第一步：准备材料</h2>
+    <p>在开始刺绣之前，你需要准备以下材料：</p>
+    <ul>
+      <li>刺绣布料（棉布或亚麻布）</li>
+      <li>刺绣针（细针和粗针各几根）</li>
+      <li>刺绣线（多种颜色的棉线或丝线）</li>
+      <li>绣绷（可选，但有助于固定布料）</li>
+      <li>剪刀</li>
+      <li>图案模板（可以打印或手绘）</li>
+    </ul>
+    <img src="../img/img_21.png" style="height: 300px;width: 300px;" alt="准备材料">
+  </div>
+  <div class="tutorial-content" id="step2">
+    <h2>第二步：开始刺绣</h2>
+    <p>按照以下步骤开始刺绣：</p>
+    <ol>
+      <li>将布料固定在绣绷上，确保布料平整。</li>
+      <li>将图案转移到布料上，可以使用水溶性笔或复写纸。</li>
+      <li>选择合适的针法和颜色，开始刺绣。例如，可以用回针绣勾勒轮廓，用长短针填充颜色。</li>
+      <li>注意保持针脚均匀，避免拉扯布料。</li>
+    </ol>
+    <img src="../img/img_22.png" style="height: 300px;width: 300px;" alt="开始刺绣">
+  </div>
+  <div class="tutorial-content" id="step3">
+    <h2>第三步：完成作品</h2>
+    <p>完成刺绣后，进行以下操作：</p>
+    <ul>
+      <li>检查作品，确保没有遗漏的地方。</li>
+      <li>修剪多余的线头，使作品更加整洁。</li>
+      <li>将作品从绣绷上取下，熨烫平整。</li>
+      <li>可以将作品装裱起来，或者制成实用的物品，如手帕、抱枕等。</li>
+    </ul>
+    <img src="../img/img_23.png" alt="完成作品" style="height: 300px;width: 300px;">
+  </div>
+  <div class="next-button" onclick="nextStep()">下一步</div>
+</div>
+</div>
+<script>
+  let currentStep = 1;
+
+  function nextStep() {
+    const steps = document.querySelectorAll('.tutorial-content');
+    steps[currentStep - 1].classList.remove('active'); // 移除当前步骤的 active 类
+    currentStep++;
+    if (currentStep > steps.length) {
+      currentStep = 1; // 如果超过步骤数，回到第一步
+    }
+    steps[currentStep - 1].classList.add('active'); // 添加下一步的 active 类
+  }
+</script>
+<div th:replace="fragments/footer :: footer"></div>
+
+
+<!-- Bootstrap 脚本支持 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
