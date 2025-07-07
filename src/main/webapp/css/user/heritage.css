@@ -1,0 +1,119 @@
+.card2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 400px;
+    height: 500px;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+body:hover #img_3 {
+    width: 1400px;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: none;
+    transition: transform 0.5s ease;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+.carousel .dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel .dots span {
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+}
+
+.carousel .dots span.active {
+    background-color: #717171;
+}
+
+.nav {
+    width: 60px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.5s;
+    opacity: 0.6;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: black;
+}
+
+tr:hover {
+    background-color: bisque;
+}
+
+tr:hover td {
+    color: black;
+}
+
+.card.h-100 {
+    background-color: #121212; /* 黑色背景 */
+    color: #ffffff; /* 白色文字 */
+    border: 1px solid #2c2c2c; /* 可选：边框更清晰 */
+}
+
+.card.h-100 .card-title,
+.card.h-100 .card-text {
+    color: #ffffff;
+}
