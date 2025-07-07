@@ -11,7 +11,6 @@
 
             margin: 0;
             padding: 0;
-
             color: #333;
         }
         header {
@@ -85,7 +84,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #8b4513; /* 棕色 */
+            background-image: url('../img/img_5.png');
             border-radius: 10px;
             transition: transform 0.3s ease;
             transform-origin: left;
@@ -98,6 +97,7 @@
         }
         .book:hover .book-cover {
             transform: rotateY(-90deg);
+            background-color: #06d6a0;
         }
         .book-intro {
             background-color: #0f0f0f;
@@ -147,19 +147,19 @@
     <iframe src="../img/a4dda0591070e0eb4e73084a81e0c31a.mp4" frameborder="0" allowfullscreen></iframe>
 </div>
 <div class="container">
-    <div class="book">
+    <div class="book" style="background-image: url('../img/img_7.png');background-size: contain">
         <a href="html_tutorial_1.html">
-            <img src="book1.jpg" alt="书籍1">
-            <h3>HTML基础教程</h3>
+            <img src="../img/img_8.png" alt="代县雁绣"style="height: 80px;width: 100px">
+            <h3>代县雁绣</h3>
         </a>
-        <div class="book-cover">HTML基础教程</div>
+        <div class="book-cover">&nbsp;&nbsp;&nbsp;&nbsp;学习刺绣，领略古老而富有文化底蕴的传统手工艺</div>
     </div>
     <div class="book">
         <a href="html_tutorial_2.html">
             <img src="book2.jpg" alt="书籍2">
             <h3>HTML进阶教程</h3>
         </a>
-        <div class="book-cover">HTML进阶教程</div>
+        <div class="book-cover"></div>
     </div>
     <div class="book">
         <a href="html_tutorial_3.html">
