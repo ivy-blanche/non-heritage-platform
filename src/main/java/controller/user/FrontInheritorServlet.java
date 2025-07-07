@@ -19,7 +19,7 @@ public class FrontInheritorServlet extends BaseServlet {
         resp.setContentType("text/html;charset=UTF-8");
 
 
-        templateEngine.process("user/heritage", context, resp.getWriter());
+        templateEngine.process("user/inheritor", context, resp.getWriter());
     }
 }
 

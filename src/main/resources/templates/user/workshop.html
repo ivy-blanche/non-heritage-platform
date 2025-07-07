@@ -4,121 +4,202 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/fragment.css}"/>
+
     <title>非遗工坊</title>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
 
-        #img_2:hover{
-
-            background-color: #05b78b;
-            opacity: 0.6;
-            box-shadow: 0 30px 50px -10px rgba(0, 0,0, 0.8);
+            color: #333;
         }
-        #img_2{
-            position: absolute;
-            top:640px;
-            --body-text-color:WHITE;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
             text-align: center;
-            height:680px;
-            width:100px;
-            font-size: 20px;
-            font-family: 华文宋体, serif;
-            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .intro {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .intro h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .intro p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .book {
+            width: 200px;
+            height: 300px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .book:hover {
+            transform: rotateY(20deg);
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .book:hover img {
+            transform: rotateY(-20deg);
+        }
+        .book h3 {
+            margin-top: 10px;
+        }
+        .book a {
+            text-decoration: none;
+            color: #333;
+        }
+        .book-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #8b4513; /* 棕色 */
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            transform-origin: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.2em;
             font-weight: bold;
-            float: left;
-            opacity: 0.5;
-            background-color: #05b78b;
         }
-        #img_3{
-            position:absolute;
-            top:550px;
-            width:1050px;
-            height:500px;
-            float: left;
-            margin-left:300px;
-            margin-top: 150px;
-            transition: 0.4s;
-            border-radius: 20px;
-            opacity: 0.8;
-
+        .book:hover .book-cover {
+            transform: rotateY(-90deg);
         }
-        #bk1{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic9.jpg);
-            overflow:hidden;
+        .book-intro {
+            background-color: #0f0f0f;
+            padding: 20px;
+            margin: 20px;
             border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        #bk2{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic10.jpeg);
-            overflow:hidden;
+        .book-intro img {
+            width: 100%;
+            height: auto;
             border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+            margin-bottom: 10px;
         }
-        #bk3{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic11.jpg);
-            overflow:hidden;
-            border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+        .book-intro h3 {
+            font-size: 1.5em;
+            color: #06d6a0;
         }
-        #bk4{
-            width:200px;
-            height:500px;
-            background-size: cover;
-            float: left;
-            background-repeat: no-repeat;
-            background-image: url(../img/pic4.jpg);
-            overflow:hidden;
+        .book-intro p {
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+        .video-container {
+            text-align: center;
+            margin: 20px;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
             border-radius: 10px;
-            transition: 0.5s;
-            box-shadow: 0 0 25px #000000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-<div id="img_3">
-    <a href="体育场.html">
-        <div id="bk1"></div></a>
-    <a href="云冈石窟.html">
-        <div id="bk2"></div></a>
-    <a href="关公庙.html">
-        <div id="bk3"></div></a>
-    <a href="壶口瀑布.html">
-        <div id="bk4"></div></a>
-    <a href="恒山.html">
-        <div id="bk5"></div></a>
-    <a href="植物园.html">
-        <div id="bk6"></div></a>
-</div>
+
 
 <div th:replace="fragments/navbar :: navbar"></div>
 
-
-<div id="img_2"class="nav">
-    <div id="st-1"><a href=""><p style="color: white">文艺产品</p></a></div>
-    <div id="st-2"><a href="诗意旅行社2.html"><p style="color: white">特色建筑</p></a></div>
-    <div id="st-3"><a href="诗意旅行社5.html"><p style="color: white">辉煌泥塑</p></a></div>
-    <div id="st-4"><a href="诗意旅行社4.html"><p style="color: white">歌曲舞蹈</p></a></div>
-
+<header>
+    <h1>非遗工坊</h1>
+</header>
+<div class="intro">
+    <h2>学习非遗制作，传承非遗文化，守护中华文化</h2>
+    <p>欢迎来到非遗工坊，这里是学习和传承非物质文化遗产的起点。</p>
+</div>
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="container">
+    <div class="book">
+        <a href="html_tutorial_1.html">
+            <img src="book1.jpg" alt="书籍1">
+            <h3>HTML基础教程</h3>
+        </a>
+        <div class="book-cover">HTML基础教程</div>
+    </div>
+    <div class="book">
+        <a href="html_tutorial_2.html">
+            <img src="book2.jpg" alt="书籍2">
+            <h3>HTML进阶教程</h3>
+        </a>
+        <div class="book-cover">HTML进阶教程</div>
+    </div>
+    <div class="book">
+        <a href="html_tutorial_3.html">
+            <img src="book3.jpg" alt="书籍3">
+            <h3>HTML布局教程</h3>
+        </a>
+        <div class="book-cover">HTML布局教程</div>
+    </div>
+    <div class="book">
+        <a href="html_tutorial_4.html">
+            <img src="book4.jpg" alt="书籍4">
+            <h3>HTML实战教程</h3>
+        </a>
+        <div class="book-cover">HTML实战教程</div>
+    </div>
+</div>
+<div class="book-intro">
+    <img src="book1-intro.jpg" alt="HTML基础教程介绍">
+    <h3>HTML基础教程</h3>
+    <p>本教程适合初学者，从HTML的基本语法开始，逐步讲解如何构建简单的网页。</p>
+</div>
+<div class="book-intro">
+    <img src="book2-intro.jpg" alt="HTML进阶教程介绍">
+    <h3>HTML进阶教程</h3>
+    <p>本教程适合有一定基础的读者，深入讲解HTML5的新特性和高级用法。</p>
+</div>
+<div class="book-intro">
+    <img src="book3-intro.jpg" alt="HTML布局教程介绍">
+    <h3>HTML布局教程</h3>
+    <p>本教程专注于网页布局，讲解如何使用HTML和CSS实现各种复杂的页面布局。</p>
+</div>
+<div class="book-intro">
+    <img src="book4-intro.jpg" alt="HTML实战教程介绍">
+    <h3>HTML实战教程</h3>
+    <p>本教程通过实际项目案例，讲解如何应用HTML和CSS完成完整的网页设计。</p>
 </div>
 
-<div th:replace="fragments/footer :: footer"></div>
 
 </body>
 </html>

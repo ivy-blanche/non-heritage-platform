@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>非遗项目</title>
@@ -17,7 +17,6 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-
 
         body:hover #img_3{
             width: 1400px;
@@ -108,11 +107,11 @@
 <div th:replace="fragments/navbar :: navbar"></div>
 
 <!-- 非遗项目展示区域 -->
-<div class="container mt-5">
+<div class="container mt-5 " >
     <h1 class="text-center mb-4">代县非遗</h1>
     <div class="row">
         <!-- 非遗项目卡片 -->
-        <div class="carousel">
+        <div class="carousel" style="border-radius: 3px;">
             <img src="../img/pic1.jpg" style="height: 400px;" alt="Image 1" class="active">
             <img src="../img/pic6.jpg" style="height: 400px;" alt="Image 2">
             <img src="../img/pic4.jpg" style="height: 400px;" alt="Image 3">
@@ -176,8 +175,10 @@
 <hr>
 <div>
     <h2 align="center">非遗项目信息表</h2>
+    <form th:action="@{/submitForm}" method="post">
     <table>
         <thead>
+
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -187,80 +188,132 @@
         </thead>
         <tbody>
         <tr>
-            <td>1</td>
-            <td>剪纸艺术</td>
-            <td>传统手工艺</td>
-            <td>剪纸是一种传统的民间艺术，通过剪刀和纸张创作出各种图案。</td>
+            <td id="id"></tdid>
+            <td id="name"></td>
+            <td id="category"></td>
+            <td id="description"></td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td>京剧</td>
-            <td>传统戏剧</td>
-            <td>京剧是中国的一种传统戏曲形式，具有独特的唱腔和表演风格。</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>中医针灸</td>
-            <td>传统医药</td>
-            <td>中医针灸是一种通过针刺穴位来治疗疾病的传统医学方法。</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>皮影戏</td>
-            <td>传统戏剧</td>
-            <td>皮影戏是一种通过操纵皮影进行表演的传统戏剧形式。</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>中国书法</td>
-            <td>传统艺术</td>
-            <td>书法是中国传统的书写艺术，注重笔法和结构。</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>中国武术</td>
-            <td>传统体育</td>
-            <td>武术是中国传统的体育形式，包括各种拳法和器械。</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>中国茶艺</td>
-            <td>传统技艺</td>
-            <td>茶艺是一种通过泡茶和品茶来展示茶文化的传统技艺。</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>中国刺绣</td>
-            <td>传统手工艺</td>
-            <td>刺绣是一种通过针线在布料上绣出图案的传统手工艺。</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>中国古建筑</td>
-            <td>传统建筑</td>
-            <td>古建筑是中国传统的建筑形式，具有独特的结构和装饰。</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>中国民间故事</td>
-            <td>传统文学</td>
-            <td>民间故事是中国传统文学的重要组成部分，包含了许多传说和故事。</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>中国民间音乐</td>
-            <td>传统音乐</td>
-            <td>民间音乐是中国传统音乐的重要组成部分，具有丰富的地域特色。</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>中国民间舞蹈</td>
-            <td>传统舞蹈</td>
-            <td>民间舞蹈是中国传统舞蹈的重要组成部分，具有丰富的地域特色。</td>
-        </tr>
+<!--        <tr>-->
+<!--            <td>2</td>-->
+<!--            <td>京剧</td>-->
+<!--            <td>传统戏剧</td>-->
+<!--            <td>京剧是中国的一种传统戏曲形式，具有独特的唱腔和表演风格。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>3</td>-->
+<!--            <td>中医针灸</td>-->
+<!--            <td>传统医药</td>-->
+<!--            <td>中医针灸是一种通过针刺穴位来治疗疾病的传统医学方法。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>4</td>-->
+<!--            <td>皮影戏</td>-->
+<!--            <td>传统戏剧</td>-->
+<!--            <td>皮影戏是一种通过操纵皮影进行表演的传统戏剧形式。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>5</td>-->
+<!--            <td>中国书法</td>-->
+<!--            <td>传统艺术</td>-->
+<!--            <td>书法是中国传统的书写艺术，注重笔法和结构。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>6</td>-->
+<!--            <td>中国武术</td>-->
+<!--            <td>传统体育</td>-->
+<!--            <td>武术是中国传统的体育形式，包括各种拳法和器械。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>7</td>-->
+<!--            <td>中国茶艺</td>-->
+<!--            <td>传统技艺</td>-->
+<!--            <td>茶艺是一种通过泡茶和品茶来展示茶文化的传统技艺。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>8</td>-->
+<!--            <td>中国刺绣</td>-->
+<!--            <td>传统手工艺</td>-->
+<!--            <td>刺绣是一种通过针线在布料上绣出图案的传统手工艺。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>9</td>-->
+<!--            <td>中国古建筑</td>-->
+<!--            <td>传统建筑</td>-->
+<!--            <td>古建筑是中国传统的建筑形式，具有独特的结构和装饰。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>10</td>-->
+<!--            <td>中国民间故事</td>-->
+<!--            <td>传统文学</td>-->
+<!--            <td>民间故事是中国传统文学的重要组成部分，包含了许多传说和故事。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>11</td>-->
+<!--            <td>中国民间音乐</td>-->
+<!--            <td>传统音乐</td>-->
+<!--            <td>民间音乐是中国传统音乐的重要组成部分，具有丰富的地域特色。</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>12</td>-->
+<!--            <td>中国民间舞蹈</td>-->
+<!--            <td>传统舞蹈</td>-->
+<!--            <td>民间舞蹈是中国传统舞蹈的重要组成部分，具有丰富的地域特色。</td>-->
+<!--        </tr>-->
+
         </tbody>
     </table>
-    <script>
+        <div class="heritage-list">
+            <div th:each="item : ${heritageList}" class="heritage-row">
+                <a th:href="@{'/admin/heritage/detail?id=' + ${item.id}}" th:text="${item.name}"
+                   class="heritage-name-link"></a>
+                <div class="heritage-actions">
+                    <a th:href="@{'/admin/heritage/edit?id=' + ${item.id}}" class="action-button edit-btn">Edit</a>
+
+                    <!-- 注意：用 data-id 记录要删除的 ID -->
+                    <a href="#" class="action-button delete-btn"
+                       th:attr="data-id=${item.id}"
+                       data-bs-toggle="modal"
+                       data-bs-target="#confirmDeleteModal">
+                        Delete
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="heritage-list">
+        <div th:each="item : ${heritageList}" class="heritage-row">
+            <a th:href="@{'/admin/heritage/detail?id=' + ${item.id}}" th:text="${item.name}"
+               class="heritage-name-link"></a>
+            <div class="heritage-actions">
+                <a th:href="@{'/admin/heritage/edit?id=' + ${item.id}}" class="action-button edit-btn">Edit</a>
+
+                <!-- 注意：用 data-id 记录要删除的 ID -->
+                <a href="#" class="action-button delete-btn"
+                   th:attr="data-id=${item.id}"
+                   data-bs-toggle="modal"
+                   data-bs-target="#confirmDeleteModal">
+                    Delete
+                </a>
+
+
+            </div>
+        </div>
+    </div>
+
+<!--    <script>-->
+<!--        var data= '<%= request.getAttribute("id") %>';-->
+<!--        var data1='<%= request.getAttribute("name") %>';-->
+<!--        var data2='<%= request.getAttribute("category") %>';-->
+<!--        var data3='<%= request.getAttribute("description") %>';-->
+<!--        document.getElementById("id").innerHTML=data;-->
+<!--        document.getElementById("name").innerHTML=data1;-->
+<!--        document.getElementById("category").innerHTML=data2;-->
+<!--        document.getElementById("description").innerHTML=data3;-->
+<!--    </script>-->
+</div>
+<script>
         let slideIndex = 1;
         showSlides(slideIndex);
 
@@ -288,7 +341,22 @@
             moveSlide(1);
         }, 3000); // 每3秒自动切换到下一张图片
     </script>
-</div>
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+    <script th:inline="javascript">
+        const ctxPath = [[${#httpServletRequest.contextPath}]];
+        document.addEventListener('DOMContentLoaded', function () {
+            const deleteButtons = document.querySelectorAll('.delete-btn');
+            const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+            deleteButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const heritageId = this.getAttribute('data-id');
+                    confirmDeleteBtn.href = ctxPath + '/admin/heritage/delete?id=' + encodeURIComponent(heritageId);
+                });
+            });
+        });
+    </script>
+
 <!-- Bootstrap 脚本支持 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

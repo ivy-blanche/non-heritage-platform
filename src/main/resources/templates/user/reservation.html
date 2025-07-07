@@ -7,10 +7,343 @@
     <!-- 引入 Bootstrap（可选） -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/fragment.css}"/>
+    <style>
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: #0d0d0d;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .appointment-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .appointment-form h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #555;
+        }
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin-bottom: 20px;
+        }
+        .form-control:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 0 0.2rem rgba(37, 117, 252, 0.25);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #5a0fb5 0%, #1e5fc7 100%);
+        }
+        .appointment-list {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .appointment-list h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+        .table {
+            margin-bottom: 0;
+        }
+        .table th {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: bold;
+        }
+        .table td {
+            vertical-align: middle;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        .inheritor-list {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .inheritor-list h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+        .inheritor-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .inheritor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .inheritor-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .inheritor-card .card-body {
+            padding: 20px;
+        }
+        .inheritor-card .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .inheritor-card .card-text {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
 
 <div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="header">
+    <div class="container">
+        <h1>传承者预约培养</h1>
+        <p>预约您感兴趣的传承项目，与传承者面对面交流学习</p>
+    </div>
+</div>
+
+<!-- 预约表单 -->
+<div class="container">
+    <div class="appointment-form">
+        <h2>预约信息</h2>
+        <form id="appointmentForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">姓名</label>
+                <input type="text" class="form-control" id="name" placeholder="请输入您的姓名" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">联系电话</label>
+                <input type="tel" class="form-control" id="phone" placeholder="请输入您的联系电话" required>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">预约日期</label>
+                <input type="date" class="form-control" id="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">预约时间</label>
+                <input type="time" class="form-control" id="time" required>
+            </div>
+            <div class="mb-3">
+                <label for="project" class="form-label">传承项目</label>
+                <select class="form-control" id="project" required>
+                    <option value="">请选择传承项目</option>
+                    <option value="传统木雕技艺">传统木雕技艺</option>
+                    <option value="传统刺绣工艺">传统刺绣工艺</option>
+                    <option value="传统陶瓷制作技艺">传统陶瓷制作技艺</option>
+                    <option value="传统剪纸技艺">传统剪纸技艺</option>
+                    <option value="传统酿酒技艺">传统酿酒技艺</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">留言（可选）</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="请输入您的留言"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">提交预约</button>
+        </form>
+    </div>
+</div>
+
+<!-- 预约列表 -->
+<div class="container">
+    <div class="appointment-list">
+        <h2>预约列表</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>联系电话</th>
+                <th>预约日期</th>
+                <th>预约时间</th>
+                <th>传承项目</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody id="appointmentTableBody">
+            <!-- 预约数据将通过 JavaScript 动态加载 -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 传承者列表 -->
+<div class="container">
+    <div class="inheritor-list">
+        <h2>传承者列表</h2>
+        <div class="row" id="inheritorList">
+            <!-- 传承者数据将通过 JavaScript 动态加载 -->
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- 自定义JS -->
+<script>
+    // 示例数据
+    let appointments = [
+        { id: 1, name: '张三', phone: '13800138000', date: '2023-10-15', time: '10:00', project: '传统木雕技艺' },
+        { id: 2, name: '李四', phone: '13900139000', date: '2023-10-16', time: '14:00', project: '传统刺绣工艺' }
+    ];
+
+    let inheritors = [
+        { id: 1, name: '张三', project: '传统木雕技艺', image: 'https://via.placeholder.com/400x250', description: '国家级非物质文化遗产项目代表性传承人，擅长传统木雕技艺。' },
+        { id: 2, name: '李四', project: '传统刺绣工艺', image: 'https://via.placeholder.com/400x250', description: '省级非物质文化遗产项目代表性传承人，精通传统刺绣工艺。' },
+        { id: 3, name: '王五', project: '传统陶瓷制作技艺', image: 'https://via.placeholder.com/400x250', description: '市级非物质文化遗产项目代表性传承人，致力于传统陶瓷制作技艺的传承与创新。' }
+    ];
+
+    // 加载预约列表
+    function loadAppointments() {
+        const tableBody = document.getElementById('appointmentTableBody');
+        tableBody.innerHTML = '';
+        appointments.forEach(appointment => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${appointment.name}</td>
+                <td>${appointment.phone}</td>
+                <td>${appointment.date}</td>
+                <td>${appointment.time}</td>
+                <td>${appointment.project}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="deleteAppointment(${appointment.id})">删除</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    // 加载传承者列表
+    function loadInheritors() {
+        const inheritorList = document.getElementById('inheritorList');
+        inheritorList.innerHTML = '';
+        inheritors.forEach(inheritor => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4';
+            col.innerHTML = `
+                <div class="card inheritor-card">
+                    <img src="${inheritor.image}" alt="${inheritor.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${inheritor.name}</h5>
+                        <p class="card-text">${inheritor.description}</p>
+                    </div>
+                </div>
+            `;
+            inheritorList.appendChild(col);
+        });
+    }
+
+    // 添加预约
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const project = document.getElementById('project').value;
+
+        const newAppointment = {
+            id: appointments.length + 1,
+            name,
+            phone,
+            date,
+            time,
+            project
+        };
+
+        appointments.push(newAppointment);
+        loadAppointments();
+        this.reset();
+        alert('预约成功！');
+    });
+
+    // 删除预约
+    function deleteAppointment(id) {
+        appointments = appointments.filter(appointment => appointment.id !== id);
+        loadAppointments();
+    }
+
+    // 初始化页面
+    loadAppointments();
+    loadInheritors();
+</script>
+
 <div th:replace="fragments/footer :: footer"></div>
 
 
