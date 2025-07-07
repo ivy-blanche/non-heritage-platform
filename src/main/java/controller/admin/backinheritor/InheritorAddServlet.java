@@ -1,8 +1,8 @@
 package controller.admin.backinheritor;
 
 import controller.BaseServlet;
-import dao.admin.InheritorDao;
-import dao.impl.admin.InheritorDaoImpl;
+import dao.admin.AdminInheritorDao;
+import dao.impl.admin.AdminInheritorDaoImpl;
 import model.Inheritor;
 import org.thymeleaf.context.WebContext;
 
@@ -13,7 +13,7 @@ import java.io.IOException;
 @WebServlet("/admin/inheritor/add")
 public class InheritorAddServlet extends BaseServlet {
 
-    private InheritorDao inheritorDao = new InheritorDaoImpl();
+    private AdminInheritorDao inheritorDao = new AdminInheritorDaoImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

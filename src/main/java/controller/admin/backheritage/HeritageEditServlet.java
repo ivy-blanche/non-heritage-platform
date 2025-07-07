@@ -1,8 +1,8 @@
 package controller.admin.backheritage;
 
 import controller.BaseServlet;
-import dao.admin.HeritageDao;
-import dao.impl.admin.HeritageDaoImpl;
+import dao.admin.AdminHeritageDao;
+import dao.impl.admin.AdminHeritageDaoImpl;
 import model.Heritage;
 import org.thymeleaf.context.WebContext;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/admin/heritage/edit")
 public class HeritageEditServlet extends BaseServlet {
 
-    private HeritageDao heritageDao = new HeritageDaoImpl();
+    private AdminHeritageDao heritageDao = new AdminHeritageDaoImpl();
 
     // 显示编辑页面
     @Override

@@ -1,7 +1,7 @@
 // HeritageDaoImpl实现
 package dao.impl.admin;
 
-import dao.admin.HeritageDao;
+import dao.admin.AdminHeritageDao;
 import model.Heritage;
 import utils.DBUtil;
 
@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HeritageDaoImpl implements HeritageDao {
+public class AdminHeritageDaoImpl implements AdminHeritageDao {
     @Override
     public List<Heritage> findAll() {
         List<Heritage> list = new ArrayList<>();

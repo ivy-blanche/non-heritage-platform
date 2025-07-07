@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,34 +8,54 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/fragment.css}"/>
     <style>
+
+        .card.h-100 {
+            background-color: #121212;
+            color: #ffffff;
+            border: 1px solid #2c2c2c;
+        }
+
+        .card.h-100 .card-title,
+        .card.h-100 .card-text {
+            color: #ffffff;
+        }
+
+
         body {
 
             margin: 20px;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
+
         th, td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
+
         th {
             background-color: black;
         }
+
         tr:hover {
             background-color: bisque;
         }
-        tr:hover td{
+
+        tr:hover td {
             color: black;
         }
+
         body {
             font-family: 'Noto Serif SC', serif;
 
 
         }
+
         .header {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
@@ -44,16 +63,19 @@
             text-align: center;
             margin-bottom: 40px;
         }
+
         .header h1 {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
+
         .header p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
         }
+
         .inheritor-card {
             border: none;
             border-radius: 15px;
@@ -63,59 +85,72 @@
             cursor: pointer;
             margin-bottom: 30px;
         }
+
         .inheritor-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
+
         .inheritor-card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
         }
+
         .inheritor-card .card-body {
             padding: 20px;
         }
+
         .inheritor-card .card-title {
             font-size: 1.5rem;
             font-weight: bold;
             color: #333;
             margin-bottom: 10px;
         }
+
         .inheritor-card .card-text {
             font-size: 1rem;
             color: #666;
             line-height: 1.6;
         }
+
         .modal-content {
             border-radius: 15px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
         }
+
         .modal-header {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
             border-bottom: none;
         }
+
         .modal-title {
             font-size: 1.8rem;
             font-weight: bold;
         }
+
         .modal-body {
             padding: 30px;
         }
+
         .modal-body img {
             width: 100%;
             height: auto;
             border-radius: 10px;
             margin-bottom: 20px;
         }
+
         .modal-body p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #555;
         }
+
         .modal-footer {
             border-top: none;
         }
+
         .btn-close {
             color: white;
         }
@@ -126,7 +161,6 @@
 <body>
 
 <div th:replace="fragments/navbar :: navbar"></div>
-
 
 
 <!-- 传承人展示区域 -->
@@ -180,8 +214,10 @@
                 <p><strong>出生年份：</strong>1965年</p>
                 <p><strong>籍贯：</strong>福建省莆田市</p>
                 <p><strong>传承项目：</strong>传统木雕技艺</p>
-                <p><strong>技艺特点：</strong>张三的木雕作品以精细的雕刻技艺和独特的艺术风格著称，擅长雕刻佛像、人物肖像等，作品多次获得国家级奖项。</p>
-                <p><strong>传承经历：</strong>自幼跟随父亲学习木雕技艺，后拜多位木雕大师为师，系统学习传统木雕技艺。多年来致力于木雕技艺的传承与创新，培养了多名徒弟，为传统木雕技艺的传承做出了重要贡献。</p>
+                <p><strong>技艺特点：</strong>张三的木雕作品以精细的雕刻技艺和独特的艺术风格著称，擅长雕刻佛像、人物肖像等，作品多次获得国家级奖项。
+                </p>
+                <p><strong>传承经历：</strong>自幼跟随父亲学习木雕技艺，后拜多位木雕大师为师，系统学习传统木雕技艺。多年来致力于木雕技艺的传承与创新，培养了多名徒弟，为传统木雕技艺的传承做出了重要贡献。
+                </p>
                 <p><strong>代表作品：</strong>《千手观音》、《关公像》等。</p>
             </div>
             <div class="modal-footer">
@@ -206,8 +242,10 @@
                 <p><strong>出生年份：</strong>1972年</p>
                 <p><strong>籍贯：</strong>江苏省苏州市</p>
                 <p><strong>传承项目：</strong>传统刺绣工艺</p>
-                <p><strong>技艺特点：</strong>李四的刺绣作品以精细的针法和丰富的色彩搭配著称，擅长刺绣花鸟、山水等题材，作品具有很高的艺术价值和收藏价值。</p>
-                <p><strong>传承经历：</strong>自幼跟随母亲学习刺绣技艺，后进入苏州刺绣研究所深造，系统学习传统刺绣工艺。多年来致力于刺绣技艺的传承与创新，培养了多名徒弟，为传统刺绣工艺的传承做出了重要贡献。</p>
+                <p><strong>技艺特点：</strong>李四的刺绣作品以精细的针法和丰富的色彩搭配著称，擅长刺绣花鸟、山水等题材，作品具有很高的艺术价值和收藏价值。
+                </p>
+                <p><strong>传承经历：</strong>自幼跟随母亲学习刺绣技艺，后进入苏州刺绣研究所深造，系统学习传统刺绣工艺。多年来致力于刺绣技艺的传承与创新，培养了多名徒弟，为传统刺绣工艺的传承做出了重要贡献。
+                </p>
                 <p><strong>代表作品：</strong>《百鸟朝凤》、《江南水乡》等。</p>
             </div>
             <div class="modal-footer">
@@ -232,8 +270,10 @@
                 <p><strong>出生年份：</strong>1968年</p>
                 <p><strong>籍贯：</strong>江西省景德镇市</p>
                 <p><strong>传承项目：</strong>传统陶瓷制作技艺</p>
-                <p><strong>技艺特点：</strong>王五的陶瓷作品以独特的造型和釉色著称，擅长制作青花瓷、粉彩瓷等，作品多次获得国家级奖项。</p>
-                <p><strong>传承经历：</strong>自幼跟随父亲学习陶瓷制作技艺，后进入景德镇陶瓷学院深造，系统学习传统陶瓷制作技艺。多年来致力于陶瓷制作技艺的传承与创新，培养了多名徒弟，为传统陶瓷制作技艺的传承做出了重要贡献。</p>
+                <p><strong>技艺特点：</strong>王五的陶瓷作品以独特的造型和釉色著称，擅长制作青花瓷、粉彩瓷等，作品多次获得国家级奖项。
+                </p>
+                <p><strong>传承经历：</strong>自幼跟随父亲学习陶瓷制作技艺，后进入景德镇陶瓷学院深造，系统学习传统陶瓷制作技艺。多年来致力于陶瓷制作技艺的传承与创新，培养了多名徒弟，为传统陶瓷制作技艺的传承做出了重要贡献。
+                </p>
                 <p><strong>代表作品：</strong>《青花瓷瓶》、《粉彩瓷盘》等。</p>
             </div>
             <div class="modal-footer">
@@ -242,51 +282,24 @@
         </div>
     </div>
 </div>
-<div>
-    <h2 align="center">非遗传承人档案表</h2>
-    <form th:action="@{/submitForm}" method="post">
-        <table>
-            <thead>
 
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td id="id"></tdid>
-                <td id="name"></td>
-                <td id="category"></td>
-                <td id="description"></td>
-            </tr>
+<hr>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">全部非遗传承人</h2>
 
-            </tbody>
-        </table>
-        <div class="heritage-list">
-            <div th:each="item : ${heritageList}" class="heritage-row">
-                <a th:href="@{'/admin/heritage/detail?id=' + ${item.id}}" th:text="${item.name}"
-                   class="heritage-name-link"></a>
-                <div class="heritage-actions">
-                    <a th:href="@{'/admin/heritage/edit?id=' + ${item.id}}" class="action-button edit-btn">Edit</a>
-
-                    <!-- 注意：用 data-id 记录要删除的 ID -->
-                    <a href="#" class="action-button delete-btn"
-                       th:attr="data-id=${item.id}"
-                       data-bs-toggle="modal"
-                       data-bs-target="#confirmDeleteModal">
-                        Delete
-                    </a>
-
-
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" th:each="item : ${inheritorList}">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${item.name}">传承人姓名</h5>
+                    <p class="card-text">类别：<span th:text="${item.category}">类别</span></p>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
+</div>
 
-</div>>
+
 <div th:replace="fragments/footer :: footer"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

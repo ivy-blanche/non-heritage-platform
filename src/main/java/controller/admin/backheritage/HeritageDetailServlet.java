@@ -1,8 +1,8 @@
 package controller.admin.backheritage;
 
 import controller.BaseServlet;
-import dao.admin.HeritageDao;
-import dao.impl.admin.HeritageDaoImpl;
+import dao.admin.AdminHeritageDao;
+import dao.impl.admin.AdminHeritageDaoImpl;
 import model.Heritage;
 import org.thymeleaf.context.WebContext;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/admin/heritage/detail")
 public class HeritageDetailServlet extends BaseServlet {
 
-    private HeritageDao heritageDao = new HeritageDaoImpl();
+    private AdminHeritageDao heritageDao = new AdminHeritageDaoImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

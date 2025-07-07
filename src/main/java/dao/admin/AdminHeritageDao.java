@@ -4,7 +4,7 @@ import model.Heritage;
 
 import java.util.List;
 
-public interface HeritageDao {
+public interface AdminHeritageDao {
     List<Heritage> findAll();
 
     Heritage findById(String id);

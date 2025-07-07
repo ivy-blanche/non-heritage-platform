@@ -1,14 +1,14 @@
 package service.admin;
 
-import dao.admin.InheritorDao;
-import dao.impl.admin.InheritorDaoImpl;
+import dao.admin.AdminInheritorDao;
+import dao.impl.admin.AdminInheritorDaoImpl;
 import model.Inheritor;
 
 import java.util.List;
 
 public class InheritorService {
 
-    private final InheritorDao inheritorDao = new InheritorDaoImpl();
+    private final AdminInheritorDao inheritorDao = new AdminInheritorDaoImpl();
 
     public List<Inheritor> getAllInheritors() {
         return inheritorDao.findAll();

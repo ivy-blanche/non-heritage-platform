@@ -1,8 +1,8 @@
 package controller.admin.backheritage;
 
 import controller.BaseServlet;
-import dao.admin.HeritageDao;
-import dao.impl.admin.HeritageDaoImpl;
+import dao.admin.AdminHeritageDao;
+import dao.impl.admin.AdminHeritageDaoImpl;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -11,7 +11,7 @@ import java.io.IOException;
 @WebServlet("/admin/heritage/delete")
 public class HeritageDeleteServlet extends BaseServlet {
 
-    private HeritageDao heritageDao = new HeritageDaoImpl();
+    private AdminHeritageDao heritageDao = new AdminHeritageDaoImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

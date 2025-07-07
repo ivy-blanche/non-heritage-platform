@@ -1,6 +1,6 @@
 package dao.impl.admin;
 
-import dao.admin.InheritorDao;
+import dao.admin.AdminInheritorDao;
 import model.Inheritor;
 import utils.DBUtil;
 
@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InheritorDaoImpl implements InheritorDao {
+public class AdminInheritorDaoImpl implements AdminInheritorDao {
 
     @Override
     public List<Inheritor> findAll() {

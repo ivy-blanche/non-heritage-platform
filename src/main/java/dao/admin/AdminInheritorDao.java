@@ -4,7 +4,7 @@ import model.Inheritor;
 
 import java.util.List;
 
-public interface InheritorDao {
+public interface AdminInheritorDao {
     List<Inheritor> findAll();
 
     Inheritor findById(String id);

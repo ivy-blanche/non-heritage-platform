@@ -1,8 +1,8 @@
 package controller.admin.backinheritor;
 
 import controller.BaseServlet;
-import dao.admin.InheritorDao;
-import dao.impl.admin.InheritorDaoImpl;
+import dao.admin.AdminInheritorDao;
+import dao.impl.admin.AdminInheritorDaoImpl;
 import model.Inheritor;
 import org.thymeleaf.context.WebContext;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/admin/inheritor/edit")
 public class InheritorEditServlet extends BaseServlet {
 
-    private InheritorDao inheritorDao = new InheritorDaoImpl();
+    private AdminInheritorDao inheritorDao = new AdminInheritorDaoImpl();
 
     // 显示编辑页面
     @Override
