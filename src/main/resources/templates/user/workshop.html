@@ -13,19 +13,16 @@
             padding: 0;
             color: #333;
         }
-
         header {
             background-color: #333;
             color: #66ccff;
             padding: 10px 20px;
             text-align: center;
         }
-
         header h1 {
             margin: 0;
             font-size: 2.5em;
         }
-
         .intro {
             background-color: #0d0d0d;
             padding: 20px;
@@ -34,17 +31,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
         .intro h2 {
             font-size: 1.5em;
             color: #06d6a0;
         }
-
         .intro p {
             font-size: 1.2em;
             color: #e0e0e0;
         }
-
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -52,7 +46,6 @@
             gap: 20px;
             padding: 20px;
         }
-
         .book {
             width: 200px;
             height: 300px;
@@ -66,31 +59,25 @@
             overflow: hidden;
             transition: transform 0.3s ease;
         }
-
         .book:hover {
             transform: rotateY(20deg);
         }
-
         .book img {
             width: 100%;
             height: auto;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
-
         .book:hover img {
             transform: rotateY(-20deg);
         }
-
         .book h3 {
             margin-top: 10px;
         }
-
         .book a {
             text-decoration: none;
             color: #333;
         }
-
         .book-cover {
             position: absolute;
             top: 0;
@@ -108,13 +95,11 @@
             font-weight: bold;
             color: #ffffff;
         }
-
         .book:hover .book-cover {
             transform: rotateY(-90deg);
 
 
         }
-
         .book-intro {
             background-color: #0f0f0f;
             padding: 20px;
@@ -123,29 +108,24 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
         .book-intro img {
             width: 100%;
             height: auto;
             border-radius: 10px;
             margin-bottom: 10px;
         }
-
         .book-intro h3 {
             font-size: 1.5em;
             color: #06d6a0;
         }
-
         .book-intro p {
             font-size: 1.2em;
             color: #ffffff;
         }
-
         .video-container {
             text-align: center;
             margin: 20px;
         }
-
         .video-container iframe {
             width: 100%;
             max-width: 800px;
@@ -169,57 +149,53 @@
 </div>
 <div class="container">
     <div class="book" style="background-image: url('../img/img_7.png');background-size: contain">
-        <a href="html_tutorial_1.html">
+        <a href=<a th:href="@{/user/cixiu.html}">
             <img src="../img/img_8.png" alt="代县雁绣" style="height: 80px;width: 100px">
             <h3>代县雁绣</h3>
         </a>
         <div class="book-cover">&nbsp;&nbsp;&nbsp;&nbsp;学习刺绣，领略古老而富有文化底蕴的传统手工艺</div>
     </div>
     <div class="book" style="background-image: url('../img/img_11.png');background-size:contain">
-        <a href="html_tutorial_2.html">
+        <a href="html_tutorial_2.html" >
             <img src="../img/img_10.png" alt="泥塑" style="height: 80px;width: 100px">
             <h3>代县泥塑</h3>
         </a>
-        <div class="book-cover" style="background-image: url('../img/img_10.jpg');background-size: cover">
-            学习泥塑，体会传统手工泥塑的高超技艺的工匠精神
-        </div>
+        <div class="book-cover" style="background-image: url('../img/img_10.jpg');background-size: cover">学习泥塑，体会传统手工泥塑的高超技艺的工匠精神</div>
     </div>
-    <div class="book" style="background-image: url('../img/img_12.png');background-size:contain">
+    <div class="book"style="background-image: url('../img/img_12.png');background-size:contain">
         <a href="html_tutorial_3.html">
             <img src="../img/img_15.png" alt="泥塑" style="height: 80px;width: 100px">
             <h3>代县剪纸</h3>
         </a>
         <div class="book-cover" style="background-image: url('../img/img_14.png');background-size: cover">&nbsp;&nbsp;&nbsp;&nbsp;学习剪纸，感受精巧绝伦的民间剪纸工艺和智慧</div>
     </div>
-    <div class="book" style="background-image: url('../img/img_18.png');background-size:cover">
+    <div class="book"style="background-image: url('../img/img_18.png');background-size:cover">
         <a href="html_tutorial_4.html">
             <img src="../img/img_17.png" alt="娥口绕阁">
             <h3>代县舞蹈</h3>
         </a>
-        <div class="book-cover" style="background-image: url('../img/img_16.png');background-size: cover">
-            学习舞蹈，传承优雅美观的中华优秀民间乐舞峨口饶阁
-        </div>
+        <div class="book-cover" style="background-image: url('../img/img_16.png');background-size: cover">学习舞蹈，传承优雅美观的中华优秀民间乐舞峨口饶阁</div>
     </div>
 </div>
 <div class="book-intro">
-    <img src="book1-intro.jpg" alt="HTML基础教程介绍">
+    <img src="../img/img_8.png" alt="雁绣" style="height: 300px;width: 400px;">
     <h3>代县雁绣</h3>
-    <p>本教程适合初学者，从HTML的基本语法开始，逐步讲解如何构建简单的网页。</p>
+    <p>代县雁绣以雁门关地区民间传统手工真丝刺绣为基础，吸收了苏绣精华，融书法绘画为一体，既具有北方粗狂豪放的独特风格，又有南方的精细雅致的特点，是不可多得的艺术收藏品。 在代县的东关主大街上有一个“雁绣坊”，十几位绣娘端坐在绣架前面，飞针走线，正在制作绣品.雁绣是代县的一种传统手工真丝刺绣，属于北方晋绣的一个分支。它结合了雁门关地区民间刺绣的粗犷风格和苏绣的精细特点。2017年，雁绣被列入山西省非物质文化遗产名录.</p>
 </div>
 <div class="book-intro">
-    <img src="book2-intro.jpg" alt="HTML进阶教程介绍">
-    <h3>HTML进阶教程</h3>
-    <p>本教程适合有一定基础的读者，深入讲解HTML5的新特性和高级用法。</p>
+    <img src="../img/pic10.jpeg"  style="height: 300px;width: 400px;" alt="HTML进阶教程介绍">
+    <h3>代县泥塑</h3>
+    <p>那些不语无声结跏趺坐在三佛殿内两侧的塑像，金妆彩绘，神态古怪，造型奇特，工艺精湛。如果这些罗汉塑像突兀在观众眼前，就会立刻打破殿内阴森的寂静，激起一阵阵令人惊叹的赞扬。这不能说不是普化寺或五台山庙群中的惊世杰作，更不能说不是中国佛教艺苑中的一朵灿烂奇葩。它们为充满生机的佛教文化平添了无限的神韵和风采，也为中外文化交流的使者带去了东方艺术的菩提心愿。</p>
 </div>
 <div class="book-intro">
-    <img src="book3-intro.jpg" alt="HTML布局教程介绍">
-    <h3>HTML布局教程</h3>
-    <p>本教程专注于网页布局，讲解如何使用HTML和CSS实现各种复杂的页面布局。</p>
+    <img src="../img/img_19.png" style="height: 300px;width: 400px;" alt="HTML布局教程介绍">
+    <h3>代县剪纸</h3>
+    <p>代县剪纸作为其中的一种，距今已有三百年的历史，到了汉唐时期，剪纸艺术已经相当流行，并被广泛用于节庆装饰和日常生活中。当时的民间妇女就已经开始有把彩帛剪成方胜、花鸟贴在鬓角作为装饰的风尚了。随着纸的出现，民间开始用色彩纸剪成各种花草、动物或是故事人物贴在窗户上作为装饰。</p>
 </div>
 <div class="book-intro">
-    <img src="book4-intro.jpg" alt="HTML实战教程介绍">
-    <h3>HTML实战教程</h3>
-    <p>本教程通过实际项目案例，讲解如何应用HTML和CSS完成完整的网页设计。</p>
+    <img src="../img/img_20.png" style="height: 300px;width: 400px;" alt="HTML实战教程介绍">
+    <h3>峨口挠阁</h3>
+    <p>峨口挠阁，又称峨口抬阁、代县抬阁，迄今已有1700多年的历史，是中国有文字记载的传承久远的抬阁民俗艺术。峨口挠阁是一种特殊的百戏杂艺，流传在山西省代县雁门关内外，而以峨口为中心。挠阁由乐队与表演队两部分组成，内容古老而传统，形式独特而别致，道具原始而质朴。</p>
 </div>
 
 <div th:replace="fragments/footer :: footer"></div>
