@@ -13,7 +13,7 @@ public class UserHeritageDaoImpl implements UserHeritageDao {
     @Override
     public List<Heritage> findAll() {
         List<Heritage> list = new ArrayList<>();
-        String sql = "SELECT id, name, categary FROM heritage";
+        String sql = "SELECT id, name, category FROM heritage";
 
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql);

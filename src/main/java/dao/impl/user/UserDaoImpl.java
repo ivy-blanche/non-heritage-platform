@@ -25,7 +25,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public User findByUsername(String username) {
-        String sql = "SELECT username, passoword FROM user WHERE username = ?";
+        String sql = "SELECT username, password FROM user WHERE username = ?";
 
         try (
                 // 获取数据库连接
